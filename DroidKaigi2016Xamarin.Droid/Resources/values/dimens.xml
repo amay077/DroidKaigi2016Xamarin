@@ -1,0 +1,60 @@
+<resources>
+    <!-- space -->
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
+    <dimen name="spacing_xsmall_negative">-4dp</dimen>
+    <dimen name="spacing_small_negative">-8dp</dimen>
+    <dimen name="spacing_negative">-16dp</dimen>
+
+    <dimen name="icon_spacing_small">2dp</dimen>
+    <dimen name="icon_spacing">4dp</dimen>
+    <dimen name="icon_spacing_large">8dp</dimen>
+    <dimen name="line_spacing">2dp</dimen>
+
+    <dimen name="line_spacing_large">4dp</dimen>
+
+
+    <!-- Text -->
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_xlarge">20sp</dimen>
+    <dimen name="text_xxlarge">28sp</dimen>
+
+
+    <!-- Line -->
+    <dimen name="line_small">1dp</dimen>
+    <dimen name="line">2dp</dimen>
+
+
+    <!-- Elevation -->
+    <dimen name="elevation">4dp</dimen>
+
+    <!-- Component -->
+    <dimen name="drawer_header">172dp</dimen>
+    <dimen name="drawer_header_icon">68dp</dimen>
+
+    <dimen name="user_image_small">28dp</dimen>
+    <dimen name="user_image">36dp</dimen>
+    <dimen name="user_image_large">48dp</dimen>
+    <dimen name="user_image_border">1dp</dimen>
+
+    <dimen name="tag_radius">4dp</dimen>
+    <dimen name="tag_padding_horizontal">8dp</dimen>
+    <dimen name="tag_padding_vertical">4dp</dimen>
+    <dimen name="tag_border_width">1dp</dimen>
+
+    <dimen name="detail_header_height">240dp</dimen>
+
+    <dimen name="sponsor_image_width">150dp</dimen>
+    <dimen name="sponsor_image_height">80dp</dimen>
+
+    <dimen name="app_info_footer_height">30dp</dimen>
+    <dimen name="sns_icon">24dp</dimen>
+    <dimen name="sns_icon_large">36dp</dimen>
+
+</resources>
+

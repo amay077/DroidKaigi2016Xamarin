@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.github.droidkaigi.confsched.activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:windowContentOverlay" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white_alpha_95"
+            android:lineSpacingExtra="@dimen/line_spacing"
+            android:padding="@dimen/spacing"
+            android:text="@string/map_address"
+            android:textColor="@color/grey600"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/text" />
+
+        <FrameLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <include layout="@layout/part_loading" />
+        </FrameLayout>
+
+        <io.github.droidkaigi.confsched.widget.MapSearchView
+            android:id="@+id/map_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidKaigi2016Xamarin.Droid", "DroidKaigi2016Xamarin.Droid\DroidKaigi2016Xamarin.Droid.csproj", "{6B9965EA-438F-4870-8B13-A3510E85A1BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidKaigi2016Xamarin.Core", "DroidKaigi2016Xamarin.Core\DroidKaigi2016Xamarin.Core.csproj", "{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B9965EA-438F-4870-8B13-A3510E85A1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9965EA-438F-4870-8B13-A3510E85A1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9965EA-438F-4870-8B13-A3510E85A1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9965EA-438F-4870-8B13-A3510E85A1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

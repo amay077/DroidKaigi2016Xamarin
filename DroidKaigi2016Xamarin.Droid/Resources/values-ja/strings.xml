@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">DroidKaigi 2016</string>
+    <string name="tag_line">Androidエンジニアが主役のカンファレンス</string>
+    <string name="session_detail">セッション詳細</string>
+
+    <string name="open">ひらく</string>
+    <string name="close">とじる</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="yes">はい</string>
+
+    <string name="speaker">スピーカー</string>
+    <string name="session_time_range">%1$s 〜 %2$s（%3$s分）</string>
+
+    <string name="title">タイトル</string>
+    <string name="description">詳細</string>
+
+    <string name="search_by_category">カテゴリから探す</string>
+    <string name="search_by_place">場所から探す</string>
+
+    <string name="icon">アイコン</string>
+
+    <string name="send_feedback">フィードバックを送る</string>
+
+    <string name="all_sessions">すべてのセッション</string>
+    <string name="my_schedule">マイスケジュール</string>
+    <string name="map">マップ</string>
+    <string name="settings">設定</string>
+    <string name="sponsors">スポンサー</string>
+    <string name="about">詳細</string>
+
+    <string name="map_main_name">受付・基調講演会場</string>
+    <string name="map_main_building">70周年記念講堂</string>
+    <string name="map_ab_name">A・B会場</string>
+    <string name="map_ab_building">南2号館</string>
+    <string name="map_cd_name">C・D会場</string>
+    <string name="map_cd_building">南4号館</string>
+    <string name="map_party_name">懇親会会場</string>
+    <string name="map_party_building">東工大蔵前会館（くらまえホール）</string>
+    <string name="map_address">東京工業大学大岡山キャンパス\n東京都目黒区大岡山2&#8211;12&#8211;1</string>
+
+    <string name="lang_ar">アラビア語</string>
+    <string name="lang_en">英語</string>
+    <string name="lang_ja">日本語</string>
+
+    <string name="settings_language">言語を設定</string>
+    <string name="settings_language_description">表示言語を変更できます。変更後はアプリが再起動されます。</string>
+    <string name="settings_bugreport">バグレポート</string>
+
+    <string name="sponsor_category_platinum">プラチナスポンサー</string>
+    <string name="sponsor_category_video">ビデオスポンサー</string>
+    <string name="sponsor_category_food">フードスポンサー</string>
+    <string name="sponsor_category_normal">サポーターズ</string>
+
+    <string name="about_conference">DroidKaigiについて</string>
+    <string name="about_conference_descriptions">DroidKaigiはエンジニアが主役のAndroidカンファレンスです。今回は会期を2日間、著名エンジニア（海外・国内）による招待講演を予定しています。内容が確定次第、公開していきます。詳細はスケジュールをご確認ください。\n\n会期中は、セッション（複数ルーム）以外にもハンズオン、オフィスアワーなども検討しています。\nAndroidの利用シーンは多岐に渡り、一人ではとてもカバーしきれません。カンファレンスを通して業界全体で知見を共有し、より良いソフトウェア開発に繋げていきましょう。</string>
+    <string name="about_rep">代表者：%1$s</string>
+    <string name="about_social">ソーシャル</string>
+    <string name="about_terms">利用規約</string>
+    <string name="about_license">ライセンス</string>
+    <string name="about_questionnaire">アンケート</string>
+    <string name="about_version_prefix">V%1$s</string>
+
+    <string name="search_hint">キーワードで検索</string>
+
+    <string name="app_close_confirm">もう一度戻るボタンを押すとアプリが閉じます</string>
+    <string name="app_close_now">すぐに閉じる</string>
+
+    <string name="my_schedule_empty">まだセッションが追加されていません。全てのセッションから聞きたいセッションを選んでみましょう!</string>
+    <string name="my_schedule_go_to_session_list">全てのセッションを見る</string>
+</resources>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{6B9965EA-438F-4870-8B13-A3510E85A1BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DroidKaigi2016Xamarin.Droid</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AssemblyName>DroidKaigi2016Xamarin.Droid</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="AndroidFlowLayout">
+      <HintPath>..\packages\AndroidFlowLayout.1.9.0.1\lib\monoandroid403\AndroidFlowLayout.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainApplication.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\MainActivityBinding.cs" />
+    <Compile Include="Fragments\SessionsFragment.cs" />
+    <Compile Include="Fragments\SessionsFragmentBinding.cs" />
+    <Compile Include="Fragments\SessionsTabFragment.cs" />
+    <Compile Include="Utils\DateUtil.cs" />
+    <Compile Include="Utils\AppUtil.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Utils\Parcels.cs" />
+    <Compile Include="Fragments\SessionsTabFragmentBinding.cs" />
+    <Compile Include="Widgets\ArrayRecyclerAdapter.cs" />
+    <Compile Include="Widgets\CategoryView.cs" />
+    <Compile Include="Extensions\CategoryExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Resources\.DS_Store" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activities\" />
+    <Folder Include="Fragments\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Widgets\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <AndroidResource Include="Resources\anim\activity_fade_enter.xml" />
+    <AndroidResource Include="Resources\anim\activity_fade_exit.xml" />
+    <AndroidResource Include="Resources\anim\fragment_fade_enter.xml" />
+    <AndroidResource Include="Resources\anim\fragment_fade_exit.xml" />
+    <AndroidResource Include="Resources\drawable\circle_border_grey200.xml" />
+    <AndroidResource Include="Resources\drawable\clickable.xml" />
+    <AndroidResource Include="Resources\drawable\clickable_oval.xml" />
+    <AndroidResource Include="Resources\drawable\clickable_white.xml" />
+    <AndroidResource Include="Resources\drawable\fab_icon.xml" />
+    <AndroidResource Include="Resources\drawable\tag_language.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_access_time_grey_500_12dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_access_time_grey_500_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_access_time_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_close_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_description_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_event_note_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_event_note_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_facebook_40dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_github_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_info_outline_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_people_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_person_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_blue_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_green_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_purple_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_red_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_search_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_grey_300_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_yellow_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_twitter_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_twitter_40dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_access_time_grey_500_12dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_access_time_grey_500_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_access_time_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_close_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_description_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_event_note_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_event_note_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_facebook_40dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_github_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_info_outline_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_people_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_person_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_blue_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_green_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_purple_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_place_red_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_search_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_grey_300_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_yellow_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_twitter_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_twitter_40dp.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\ic_speaker_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\img_default_cover.png" />
+    <AndroidResource Include="Resources\drawable-v21\clickable.xml" />
+    <AndroidResource Include="Resources\drawable-v21\clickable_oval.xml" />
+    <AndroidResource Include="Resources\drawable-v21\clickable_white.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_access_time_grey_500_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_access_time_grey_500_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_access_time_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_close_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_description_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_event_note_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_event_note_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_facebook_40dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_github_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_info_outline_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_people_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_person_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_blue_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_green_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_purple_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_red_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_search_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_grey_300_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_yellow_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_twitter_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_twitter_40dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_access_time_grey_500_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_access_time_grey_500_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_access_time_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_close_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_description_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_event_note_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_event_note_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_facebook_40dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_github_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_info_outline_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_people_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_person_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_blue_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_green_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_purple_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_red_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_search_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_grey_300_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_yellow_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_twitter_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_twitter_40dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_access_time_grey_500_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_access_time_grey_500_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_access_time_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_close_white_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_description_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_event_note_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_event_note_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_github_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_info_outline_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_people_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_person_grey_600_12dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_blue_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_green_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_purple_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_place_red_500_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_search_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_grey_600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_grey_300_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_yellow_600_24dp.png" />
+    <AndroidResource Include="Resources\layout\activity_main.xml" />
+    <AndroidResource Include="Resources\layout\activity_search.xml" />
+    <AndroidResource Include="Resources\layout\activity_searched_sessions.xml" />
+    <AndroidResource Include="Resources\layout\activity_session_detail.xml" />
+    <AndroidResource Include="Resources\layout\activity_web_view.xml" />
+    <AndroidResource Include="Resources\layout\fragment_about.xml" />
+    <AndroidResource Include="Resources\layout\fragment_map.xml" />
+    <AndroidResource Include="Resources\layout\fragment_session_detail.xml" />
+    <AndroidResource Include="Resources\layout\fragment_sessions.xml" />
+    <AndroidResource Include="Resources\layout\fragment_sessions_tab.xml" />
+    <AndroidResource Include="Resources\layout\fragment_settings.xml" />
+    <AndroidResource Include="Resources\layout\fragment_sponsors.xml" />
+    <AndroidResource Include="Resources\layout\item_search_category.xml" />
+    <AndroidResource Include="Resources\layout\item_search_place.xml" />
+    <AndroidResource Include="Resources\layout\item_search_result.xml" />
+    <AndroidResource Include="Resources\layout\item_search_title.xml" />
+    <AndroidResource Include="Resources\layout\item_session.xml" />
+    <AndroidResource Include="Resources\layout\nav_header.xml" />
+    <AndroidResource Include="Resources\layout\part_loading.xml" />
+    <AndroidResource Include="Resources\layout\toolbar_search.xml" />
+    <AndroidResource Include="Resources\layout\view_map_search.xml" />
+    <AndroidResource Include="Resources\layout\view_map_search_item.xml" />
+    <AndroidResource Include="Resources\layout\view_search_places_and_categories.xml" />
+    <AndroidResource Include="Resources\layout\view_speaker_sns_icons.xml" />
+    <AndroidResource Include="Resources\layout\view_sponsor_image.xml" />
+    <AndroidResource Include="Resources\menu\drawer_menu.xml" />
+    <AndroidResource Include="Resources\menu\menu_map.xml" />
+    <AndroidResource Include="Resources\menu\menu_sessions.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\raw\sessions_ja.json" />
+    <AndroidResource Include="Resources\values\attrs.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\values\integers.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\strings_urls.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\styles_about.xml" />
+    <AndroidResource Include="Resources\values\styles_compat.xml" />
+    <AndroidResource Include="Resources\values\styles_sponsor.xml" />
+    <AndroidResource Include="Resources\values\themes.xml" />
+    <AndroidResource Include="Resources\values-ja\strings.xml" />
+    <AndroidResource Include="Resources\values-v21\styles_compat.xml" />
+    <AndroidResource Include="Resources\values-v21\themes.xml" />
+    <AndroidResource Include="Resources\values-w820dp\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DroidKaigi2016Xamarin.Core\DroidKaigi2016Xamarin.Core.csproj">
+      <Project>{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}</Project>
+      <Name>DroidKaigi2016Xamarin.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

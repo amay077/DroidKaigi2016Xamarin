@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="Cheesesquare.UITests/bin/Release/Cheesesquare.UITests.dll" total="3" failures="0" not-run="0" date="2015-07-23" time="13:25:15">
+  <environment nunit-version="2.4.8.0" clr-version="4.0.30319.17020" os-version="Unix 14.4.0.0" platform="Unix" cwd="/Users/redth/AeroFS/xamarin/components/JenkinsRoot/AndroidSupport/AndroidSupportDesign/samples/Cheesesquare" machine-name="Redth" user="redth" user-domain="Redth" />
+  <culture-info current-culture="en-CA" current-uiculture="en-CA" />
+  <test-suite name="Cheesesquare.UITests/bin/Release/Cheesesquare.UITests.dll" success="True" time="71.332" asserts="0">
+    <results>
+      <test-suite name="Cheesesquare" success="True" time="71.330" asserts="0">
+        <results>
+          <test-suite name="UITests" success="True" time="71.327" asserts="0">
+            <results>
+              <test-suite name="Tests" success="True" time="71.321" asserts="0">
+                <results>
+                  <test-case name="Cheesesquare.UITests.Tests.ClickingFloatingActionButtonShouldDisplaySnackbar" executed="True" success="True" time="50.648" asserts="0" />
+                  <test-case name="Cheesesquare.UITests.Tests.ClickingHamburgerShouldRevealDrawer" executed="True" success="True" time="10.448" asserts="0" />
+                  <test-case name="Cheesesquare.UITests.Tests.ClickingItemShouldRevealDetails" executed="True" success="True" time="10.215" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
