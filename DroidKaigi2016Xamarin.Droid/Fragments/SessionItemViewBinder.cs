@@ -21,6 +21,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         public readonly ImageView imgSpeaker;
         public readonly TextView txtSpeakerName;
         public readonly Com.Like.LikeButton btnStar;
+        public readonly View cardView;
 
         public static SessionItemViewBinder NewInstance(ViewGroup parent)
         {
@@ -39,6 +40,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             imgSpeaker = view.FindViewById<ImageView>(Resource.Id.img_speaker);
             txtSpeakerName = view.FindViewById<TextView>(Resource.Id.txt_speaker_name);
             btnStar = view.FindViewById<Com.Like.LikeButton>(Resource.Id.btn_star);
+            cardView = view.FindViewById<View>(Resource.Id.card_view);
         }
 
         public void SetSession(Session session)

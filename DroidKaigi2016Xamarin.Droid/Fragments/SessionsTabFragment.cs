@@ -12,6 +12,7 @@ using Android.Content;
 using DroidKaigi2016Xamarin.Droid.Widgets;
 using DroidKaigi2016Xamarin.Droid.Extensions;
 using io.github.droidkaigi.confsched.widget;
+using DroidKaigi2016Xamarin.Droid.Activities;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -23,9 +24,10 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
 //        @Inject
 //        SessionDao dao;
+
 //        @Inject
-//        ActivityNavigator activityNavigator;
-//
+        ActivityNavigator activityNavigator = ActivityNavigator.Instance;
+
         private SessionsAdapter adapter;
         private SessionsTabFragmentBinding binding;
 
@@ -149,10 +151,14 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //                        dao.updateChecked(session);
 //                    }
 //                });
+
+                binding.cardView.SetOnClickAction(v =>
+                    {
+                        ActivityNavigator.Instance.ShowSessionDetail(this.Context as Activity, session, REQ_DETAIL);
+                    });
 //
 //                binding.cardView.setOnClickListener(v ->
 //                    activityNavigator.showSessionDetail(getActivity(), session, REQ_DETAIL));
-//            }
             }
         }
     }
