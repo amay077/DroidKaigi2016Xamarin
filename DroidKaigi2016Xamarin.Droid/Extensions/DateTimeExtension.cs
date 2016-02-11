@@ -12,7 +12,7 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
 
         public static long ToUnixMilliSeconds(this DateTime self)
         {
-            return (long)(self - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalMilliseconds;
+            return (long)(self.ToUniversalTime() - new DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalMilliseconds;
         }
     }
 }

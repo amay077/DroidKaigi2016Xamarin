@@ -39,7 +39,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             return Android.Text.Format.DateFormat.Format(FORMAT_KKMM, date);
         }
 
-        public static string getLongFormatDate(Date date, Context context) 
+        public static string GetLongFormatDate(Date date, Context context) 
         {
             var locale = AppUtil.GetCurrentLocale(context);
             if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr2) 

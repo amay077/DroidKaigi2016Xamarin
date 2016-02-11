@@ -66,9 +66,9 @@ namespace DroidKaigi2016Xamarin.Droid.Widgets
             list.Clear();
         }
 
-        public Context GetContext() 
+        public Context Context
         {
-            return context;
+            get { return context; }
         }
 
 //        public void setOnItemClickListener(OnItemClickListener<T> listener) 

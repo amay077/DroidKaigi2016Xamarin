@@ -13,6 +13,7 @@ namespace io.github.droidkaigi.confsched.widget
 {
     public class CategoryView : TextView 
     {
+        private Category category;
 
         public CategoryView(Context context) : this(context, null)
         {
@@ -26,19 +27,36 @@ namespace io.github.droidkaigi.confsched.widget
         {
         }
 
-//        @SuppressWarnings("unused")
-//        @BindingAdapter("category")
-        public static void SetCategory(CategoryView categoryView, Category category) 
+        public Category Category
         {
-            if (category != null) 
-            {
-                categoryView.SetTextColor(new Color(ContextCompat.GetColor(categoryView.Context, category.GetVividColorResId())));
-                categoryView.SetBackgroundResource(Resource.Drawable.tag_language);
-                categoryView.Text = category.name;
-            } else {
-                categoryView.Visibility = ViewStates.Invisible;
+            get { return category; }
+            set 
+            { 
+                category = value;
+                if (value != null) 
+                {
+                    SetTextColor(new Color(ContextCompat.GetColor(Context, value.GetVividColorResId())));
+                    SetBackgroundResource(Resource.Drawable.tag_language);
+                    Text = value.name;
+                } else {
+                    Visibility = ViewStates.Invisible;
+                }
             }
         }
+
+//        @SuppressWarnings("unused")
+//        @BindingAdapter("category")
+//        public static void SetCategory(CategoryView categoryView, Category category) 
+//        {
+//            if (category != null) 
+//            {
+//                categoryView.SetTextColor(new Color(ContextCompat.GetColor(categoryView.Context, category.GetVividColorResId())));
+//                categoryView.SetBackgroundResource(Resource.Drawable.tag_language);
+//                categoryView.Text = category.name;
+//            } else {
+//                categoryView.Visibility = ViewStates.Invisible;
+//            }
+//        }
 
     }
 }

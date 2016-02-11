@@ -10,6 +10,8 @@ using Android.App;
 using Android.Support.V7.Widget;
 using Android.Content;
 using DroidKaigi2016Xamarin.Droid.Widgets;
+using DroidKaigi2016Xamarin.Droid.Extensions;
+using io.github.droidkaigi.confsched.widget;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -26,7 +28,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //
         private SessionsAdapter adapter;
         private SessionsTabFragmentBinding binding;
-//
+
         private IList<Session> sessions;
 
         public static SessionsTabFragment NewInstance(IList<Session> sessions)
@@ -64,7 +66,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             binding.recyclerView.SetAdapter(adapter);
             binding.recyclerView.SetLayoutManager(new LinearLayoutManager(Activity));
             int spacing = Resources.GetDimensionPixelSize(Resource.Dimension.spacing_xsmall);
-//            binding.recyclerView.AddItemDecoration(new SpaceItemDecoration(spacing));
+            binding.recyclerView.AddItemDecoration(new SpaceItemDecoration(spacing));
             adapter.AddAll(sessions);
         }
 
@@ -84,34 +86,6 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                         }
                     }
                     break;
-            }
-        }
-
-
-        class SessionItemViewHolder : RecyclerView.ViewHolder 
-        {
-            public View Root { get; }
-
-            public readonly TextView txtTitle;
-
-            public readonly TextView txtStime;
-
-            public readonly View btnStar;
-
-            public static SessionItemViewHolder NewInstance(ViewGroup parent)
-            {
-                return new SessionItemViewHolder(parent);
-            }
-            
-            private SessionItemViewHolder(ViewGroup parent) : base(parent)
-            {
-                var view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.item_session, parent, false);
-
-                txtTitle = view.FindViewById<TextView>(Resource.Id.txt_title);
-                txtStime = view.FindViewById<TextView>(Resource.Id.txt_stime);
-                btnStar = view.FindViewById<View>(Resource.Id.btn_star);
-
-                Root = view;
             }
         }
 
@@ -136,16 +110,14 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                return SessionItemViewHolder.NewInstance(parent);
+                return SessionItemViewBinder.NewInstance(parent);
             }
 
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
-                var binding = holder as SessionItemViewHolder;
+                var binding = holder as SessionItemViewBinder;
                 var session = GetItem(position);
-
-                binding.txtTitle.Text = session.title;
-                binding.txtStime.Text = session.stime.ToString();
+                binding.SetSession(session);
 
                 if (position > 0 && position < ItemCount) 
                 {
@@ -183,67 +155,6 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //            }
             }
         }
-
-//        private class SessionsAdapter extends ArrayRecyclerAdapter<Session, BindingHolder<ItemSessionBinding>> {
-//
-//            public SessionsAdapter(@NonNull Context context) {
-//                super(context);
-//            }
-//
-//            private void refresh(@NonNull Session session) {
-//                // TODO It may be heavy logic...
-//                for (int i = 0; i < adapter.getItemCount(); i++) {
-//                    Session s = adapter.getItem(i);
-//                    if (session.equals(s)) {
-//                        s.checked = session.checked;
-//                        adapter.notifyItemChanged(i);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public BindingHolder<ItemSessionBinding> onCreateViewHolder(ViewGroup parent, int viewType) {
-//                return new BindingHolder<>(getContext(), parent, R.layout.item_session);
-//            }
-//
-//            @Override
-//            public void onBindViewHolder(BindingHolder<ItemSessionBinding> holder, int position) {
-//                Session session = getItem(position);
-//                ItemSessionBinding binding = holder.binding;
-//                binding.setSession(session);
-//
-//                if (position > 0 && position < getItemCount()) {
-//                    Session prevSession = getItem(position - 1);
-//                    if (prevSession.stime.getTime() == session.stime.getTime()) {
-//                        binding.txtStime.setVisibility(View.INVISIBLE);
-//                    } else {
-//                        binding.txtStime.setVisibility(View.VISIBLE);
-//                    }
-//                } else {
-//                    binding.txtStime.setVisibility(View.VISIBLE);
-//                }
-//
-//                binding.btnStar.setOnLikeListener(new OnLikeListener() {
-//                    @Override
-//                    public void liked(LikeButton likeButton) {
-//                        session.checked = true;
-//                        dao.updateChecked(session);
-//                    }
-//
-//                    @Override
-//                    public void unLiked(LikeButton likeButton) {
-//                        session.checked = false;
-//                        dao.updateChecked(session);
-//                    }
-//                });
-//
-//                binding.cardView.setOnClickListener(v ->
-//                    activityNavigator.showSessionDetail(getActivity(), session, REQ_DETAIL));
-//            }
-//
-//        }
-//        --
-
     }
 }
 

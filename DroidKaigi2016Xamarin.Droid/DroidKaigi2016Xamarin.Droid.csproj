@@ -76,6 +76,18 @@
     <Reference Include="AndroidFlowLayout">
       <HintPath>..\packages\AndroidFlowLayout.1.9.0.1\lib\monoandroid403\AndroidFlowLayout.dll</HintPath>
     </Reference>
+    <Reference Include="Stiletto">
+      <HintPath>..\packages\Stiletto.0.3.1.0\Lib\MonoAndroid\Stiletto.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkIO">
+      <HintPath>..\packages\Square.OkIO.1.5.0.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp">
+      <HintPath>..\packages\Square.OkHttp.2.4.0.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.Picasso">
+      <HintPath>..\packages\Square.Picasso.2.5.2.1\lib\MonoAndroid\Square.Picasso.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +106,12 @@
     <Compile Include="Widgets\ArrayRecyclerAdapter.cs" />
     <Compile Include="Widgets\CategoryView.cs" />
     <Compile Include="Extensions\CategoryExtension.cs" />
+    <Compile Include="Extensions\SessionExtension.cs" />
+    <Compile Include="Widgets\SpaceItemDecoration.cs" />
+    <Compile Include="Utils\DataBindingAttributeUtil.cs" />
+    <Compile Include="Widgets\Transformations\CropCircleTransformation.cs" />
+    <Compile Include="Extensions\ImageViewExtension.cs" />
+    <Compile Include="Fragments\SessionItemViewBinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -107,6 +125,7 @@
     <Folder Include="Utils\" />
     <Folder Include="Extensions\" />
     <Folder Include="Widgets\" />
+    <Folder Include="Widgets\Transformations\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
@@ -300,6 +319,10 @@
     <ProjectReference Include="..\DroidKaigi2016Xamarin.Core\DroidKaigi2016Xamarin.Core.csproj">
       <Project>{A5AD0801-5A78-4D02-B68A-18D44CA2FA0A}</Project>
       <Name>DroidKaigi2016Xamarin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LikeButton\LikeButton.csproj">
+      <Project>{6248D6DD-76F1-4A30-959C-49D380C0F07C}</Project>
+      <Name>LikeButton</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -83,8 +83,31 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             {
                 new Session
                 {
-                    title = "SessionA",
-                    stime = DateTime.Now
+                        id = 1,
+                        title = "OSSの動向を捉えた実装方針",
+                        description = "■ 概要\n 近年、Androidアプリ開発において、どんなライブラリが存在するのか知っておくのは必須といっても過言ではないでしょう。\n しかし、初めてAndroidアプリの開発文化に触れてみて、業界としてどういうものがスタンダードになっているのか\n みんなが何に注目しているのかを知るのには少し経験が必要になります。\n 代表的なものを中心に、個人的に今から作るとしたらこんな感じにしようかなっていうのを話していければと思います。\n\n■ 対象者\n　Android 初級 〜 中級\n\n■ 話すこと\n 最低限知っておくべき、各ライブラリのメリット・デメリットを簡単に説明します。\n  また、最後に、自分ならこうする！みたいなのもまとめとして話したいと思います。\n　- 開発環境\n　- Language(Java8, Kotlin)\n　　Java8に近いものを実現するためのライブラリ(Lightweight-Stream-API, Retrolambda, ThreeTenABP)\n　- Support Library (AppCompat, Design, Annotations, RecyclerView ...etc)\n　- DataBinding\n　- Network (Volley, Retrofit OkHttp ...etc)\n　- Serialization (GSON, ProtoBuf)\n　- Image Loader (Picasso, Glide, Fresco ...etc)\n　- Effect (GPUImage ...etc)\n　- DI (ButterKnife, Dagger, RoboGuice)\n　- FRP (RxJava, RxAndroid, RxLifecycle ...etc)\n　- DB/ORM (Realm, ActiveAndroid, RxPreferences, Sqlbrite ...etc)\n　- Pub/Sub (Otto, EventBus ...etc)\n　- UI (ObservableScrollview, Calligraphy ...etc)\n　- Debug (Crashlytics, Timber, Hugo, Steho, LeakCanary, Takt ...etc)",
+                        stime = DateTime.Parse("2016-02-18 10:00:00"),
+                        etime = DateTime.Parse("2016-02-18 11:00:00"),
+                        language_id = "ja",
+                        slide_url = "",
+                        speaker = new Speaker 
+                            {
+                                id = 1,
+                                name = "wasabeef",
+                                image_url = "https://pbs.twimg.com/profile_images/427481863343452160/i-G-x-Gw.jpeg",
+                                twitter_name = "wasabeef_jp",
+                                github_name = "wasabeef"
+                            },
+                        category = new Category
+                            {
+                                id = 1,
+                                name = "基調講演"
+                            },
+                        place = new Place
+                            {
+                                id = 1,
+                                name = "基調講演会場"
+                            }
                 },
                 new Session
                 {

@@ -215,6 +215,9 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010072
 			public const int allowStacking = 2130772082;
 			
+			// aapt resource value: 0x7f010125
+			public const int anim_scale_factor = 2130772261;
+			
 			// aapt resource value: 0x7f010079
 			public const int arrowHeadLength = 2130772089;
 			
@@ -304,6 +307,12 @@ namespace DroidKaigi2016Xamarin.Droid
 			
 			// aapt resource value: 0x7f010100
 			public const int checkedTextViewStyle = 2130772224;
+			
+			// aapt resource value: 0x7f010122
+			public const int circle_end_color = 2130772258;
+			
+			// aapt resource value: 0x7f010121
+			public const int circle_start_color = 2130772257;
 			
 			// aapt resource value: 0x7f01008b
 			public const int closeIcon = 2130772107;
@@ -401,8 +410,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f01005c
 			public const int customNavigationLayout = 2130772060;
 			
-			// aapt resource value: 0x7f01011c
-			public const int debugDraw = 2130772252;
+			// aapt resource value: 0x7f010127
+			public const int debugDraw = 2130772263;
 			
 			// aapt resource value: 0x7f01008a
 			public const int defaultQueryHint = 2130772106;
@@ -428,6 +437,12 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0100d0
 			public const int dividerVertical = 2130772176;
 			
+			// aapt resource value: 0x7f01011f
+			public const int dots_primary_color = 2130772255;
+			
+			// aapt resource value: 0x7f010120
+			public const int dots_secondary_color = 2130772256;
+			
 			// aapt resource value: 0x7f010077
 			public const int drawableSize = 2130772087;
 			
@@ -451,6 +466,9 @@ namespace DroidKaigi2016Xamarin.Droid
 			
 			// aapt resource value: 0x7f010067
 			public const int elevation = 2130772071;
+			
+			// aapt resource value: 0x7f010124
+			public const int enabled = 2130772260;
 			
 			// aapt resource value: 0x7f010042
 			public const int errorEnabled = 2130772034;
@@ -521,6 +539,12 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010056
 			public const int icon = 2130772054;
 			
+			// aapt resource value: 0x7f01011c
+			public const int icon_size = 2130772252;
+			
+			// aapt resource value: 0x7f01011b
+			public const int icon_type = 2130772251;
+			
 			// aapt resource value: 0x7f010088
 			public const int iconifiedByDefault = 2130772104;
 			
@@ -560,8 +584,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010087
 			public const int layout = 2130772103;
 			
-			// aapt resource value: 0x7f01011b
-			public const int layoutDirection = 2130772251;
+			// aapt resource value: 0x7f010126
+			public const int layoutDirection = 2130772262;
 			
 			// aapt resource value: 0x7f010049
 			public const int layoutManager = 2130772041;
@@ -584,8 +608,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010021
 			public const int layout_keyline = 2130772001;
 			
-			// aapt resource value: 0x7f01011e
-			public const int layout_newLine = 2130772254;
+			// aapt resource value: 0x7f010129
+			public const int layout_newLine = 2130772265;
 			
 			// aapt resource value: 0x7f01000c
 			public const int layout_scrollFlags = 2130771980;
@@ -593,8 +617,14 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f01000d
 			public const int layout_scrollInterpolator = 2130771981;
 			
-			// aapt resource value: 0x7f01011f
-			public const int layout_weight = 2130772255;
+			// aapt resource value: 0x7f01012a
+			public const int layout_weight = 2130772266;
+			
+			// aapt resource value: 0x7f01011d
+			public const int like_drawable = 2130772253;
+			
+			// aapt resource value: 0x7f010123
+			public const int liked = 2130772259;
 			
 			// aapt resource value: 0x7f0100ea
 			public const int listChoiceBackgroundIndicator = 2130772202;
@@ -713,11 +743,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010023
 			public const int rippleColor = 2130772003;
 			
-			// aapt resource value: 0x7f010120
-			public const int searchFocus = 2130772256;
+			// aapt resource value: 0x7f01012b
+			public const int searchFocus = 2130772267;
 			
-			// aapt resource value: 0x7f010121
-			public const int searchHint = 2130772257;
+			// aapt resource value: 0x7f01012c
+			public const int searchHint = 2130772268;
 			
 			// aapt resource value: 0x7f01008e
 			public const int searchHintIcon = 2130772110;
@@ -932,11 +962,14 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f010094
 			public const int track = 2130772116;
 			
+			// aapt resource value: 0x7f01011e
+			public const int unlike_drawable = 2130772254;
+			
 			// aapt resource value: 0x7f01008f
 			public const int voiceIcon = 2130772111;
 			
-			// aapt resource value: 0x7f01011d
-			public const int weightDefault = 2130772253;
+			// aapt resource value: 0x7f010128
+			public const int weightDefault = 2130772264;
 			
 			// aapt resource value: 0x7f01009b
 			public const int windowActionBar = 2130772123;
@@ -2065,85 +2098,103 @@ namespace DroidKaigi2016Xamarin.Droid
 			public const int fab_icon = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int ic_access_time_grey_500_12dp = 2130837580;
+			public const int heart_off = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int ic_access_time_grey_500_18dp = 2130837581;
+			public const int heart_on = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int ic_access_time_grey_600_24dp = 2130837582;
+			public const int ic_access_time_grey_500_12dp = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int ic_close_white_18dp = 2130837583;
+			public const int ic_access_time_grey_500_18dp = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int ic_description_grey_600_12dp = 2130837584;
+			public const int ic_access_time_grey_600_24dp = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ic_event_note_grey_600_12dp = 2130837585;
+			public const int ic_close_white_18dp = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_event_note_grey_600_24dp = 2130837586;
+			public const int ic_description_grey_600_12dp = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_facebook_40dp = 2130837587;
+			public const int ic_event_note_grey_600_12dp = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int ic_github_24dp = 2130837588;
+			public const int ic_event_note_grey_600_24dp = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int ic_info_outline_grey_600_24dp = 2130837589;
+			public const int ic_facebook_40dp = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int ic_people_grey_600_24dp = 2130837590;
+			public const int ic_github_24dp = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ic_person_grey_600_12dp = 2130837591;
+			public const int ic_info_outline_grey_600_24dp = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ic_place_blue_500_36dp = 2130837592;
+			public const int ic_people_grey_600_24dp = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_place_green_500_36dp = 2130837593;
+			public const int ic_person_grey_600_12dp = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ic_place_grey_600_24dp = 2130837594;
+			public const int ic_place_blue_500_36dp = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_place_purple_500_36dp = 2130837595;
+			public const int ic_place_green_500_36dp = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_place_red_500_36dp = 2130837596;
+			public const int ic_place_grey_600_24dp = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_search_white_24dp = 2130837597;
+			public const int ic_place_purple_500_36dp = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_settings_grey_600_24dp = 2130837598;
+			public const int ic_place_red_500_36dp = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_speaker_placeholder = 2130837599;
+			public const int ic_search_white_24dp = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_star_grey_300_24dp = 2130837600;
+			public const int ic_settings_grey_600_24dp = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_star_yellow_600_24dp = 2130837601;
+			public const int ic_speaker_placeholder = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_twitter_24dp = 2130837602;
+			public const int ic_star_grey_300_24dp = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_twitter_40dp = 2130837603;
+			public const int ic_star_yellow_600_24dp = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int img_default_cover = 2130837604;
-			
-			// aapt resource value: 0x7f020066
-			public const int notification_template_icon_bg = 2130837606;
+			public const int ic_twitter_24dp = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int tag_language = 2130837605;
+			public const int ic_twitter_40dp = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int img_default_cover = 2130837606;
+			
+			// aapt resource value: 0x7f02006c
+			public const int notification_template_icon_bg = 2130837612;
+			
+			// aapt resource value: 0x7f020067
+			public const int star_off = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int star_on = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int tag_language = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int thumb_off = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int thumb_on = 2130837611;
 			
 			static Drawable()
 			{
@@ -2158,8 +2209,8 @@ namespace DroidKaigi2016Xamarin.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int action0 = 2131427504;
+			// aapt resource value: 0x7f0b00b2
+			public const int action0 = 2131427506;
 			
 			// aapt resource value: 0x7f0b005c
 			public const int action_bar = 2131427420;
@@ -2185,8 +2236,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b005d
 			public const int action_context_bar = 2131427421;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int action_divider = 2131427508;
+			// aapt resource value: 0x7f0b00b6
+			public const int action_divider = 2131427510;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int action_menu_divider = 2131427332;
@@ -2233,8 +2284,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0046
 			public const int buttonPanel = 2131427398;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int cancel_action = 2131427505;
+			// aapt resource value: 0x7f0b00b3
+			public const int cancel_action = 2131427507;
 			
 			// aapt resource value: 0x7f0b00ab
 			public const int card_view = 2131427499;
@@ -2251,8 +2302,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0054
 			public const int checkbox = 2131427412;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int chronometer = 2131427511;
+			// aapt resource value: 0x7f0b00b9
+			public const int chronometer = 2131427513;
+			
+			// aapt resource value: 0x7f0b00af
+			public const int circle = 2131427503;
 			
 			// aapt resource value: 0x7f0b001d
 			public const int clip_horizontal = 2131427357;
@@ -2275,11 +2329,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b006d
 			public const int content_view = 2131427437;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int cover_github = 2131427524;
+			// aapt resource value: 0x7f0b00c6
+			public const int cover_github = 2131427526;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int cover_twitter = 2131427523;
+			// aapt resource value: 0x7f0b00c5
+			public const int cover_twitter = 2131427525;
 			
 			// aapt resource value: 0x7f0b0052
 			public const int custom = 2131427410;
@@ -2308,14 +2362,17 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0027
 			public const int disableHome = 2131427367;
 			
+			// aapt resource value: 0x7f0b00ae
+			public const int dots = 2131427502;
+			
 			// aapt resource value: 0x7f0b006b
 			public const int drawer = 2131427435;
 			
 			// aapt resource value: 0x7f0b005e
 			public const int edit_query = 2131427422;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int edit_search = 2131427517;
+			// aapt resource value: 0x7f0b00bf
+			public const int edit_search = 2131427519;
 			
 			// aapt resource value: 0x7f0b009e
 			public const int empty_view = 2131427486;
@@ -2329,8 +2386,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0017
 			public const int end = 2131427351;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int end_padder = 2131427516;
+			// aapt resource value: 0x7f0b00be
+			public const int end_padder = 2131427518;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int enterAlways = 2131427339;
@@ -2392,20 +2449,20 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0081
 			public const int img_facebook_clicker = 2131427457;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int img_github = 2131427525;
+			// aapt resource value: 0x7f0b00c7
+			public const int img_github = 2131427527;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int img_icon = 2131427462;
 			
-			// aapt resource value: 0x7f0b00c6
-			public const int img_logo = 2131427526;
+			// aapt resource value: 0x7f0b00c8
+			public const int img_logo = 2131427528;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int img_marker = 2131427520;
+			// aapt resource value: 0x7f0b00c2
+			public const int img_marker = 2131427522;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int img_nav_header_icon = 2131427502;
+			// aapt resource value: 0x7f0b00b0
+			public const int img_nav_header_icon = 2131427504;
 			
 			// aapt resource value: 0x7f0b0095
 			public const int img_speaker = 2131427477;
@@ -2416,11 +2473,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b007f
 			public const int img_twitter_clicker = 2131427455;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int info = 2131427515;
+			// aapt resource value: 0x7f0b00bd
+			public const int info = 2131427517;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int item_search = 2131427533;
+			// aapt resource value: 0x7f0b00cf
+			public const int item_search = 2131427535;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int item_touch_helper_previous_elevation = 2131427329;
@@ -2431,11 +2488,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0019
 			public const int left = 2131427353;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int line1 = 2131427509;
+			// aapt resource value: 0x7f0b00b7
+			public const int line1 = 2131427511;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int line3 = 2131427513;
+			// aapt resource value: 0x7f0b00bb
+			public const int line3 = 2131427515;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int listMode = 2131427365;
@@ -2452,14 +2509,14 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0088
 			public const int map = 2131427464;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int map_list_container = 2131427519;
+			// aapt resource value: 0x7f0b00c1
+			public const int map_list_container = 2131427521;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int map_search_view = 2131427466;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int media_actions = 2131427507;
+			// aapt resource value: 0x7f0b00b5
+			public const int media_actions = 2131427509;
 			
 			// aapt resource value: 0x7f0b0033
 			public const int middle = 2131427379;
@@ -2470,23 +2527,23 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b002d
 			public const int multiply = 2131427373;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int nav_about = 2131427532;
-			
-			// aapt resource value: 0x7f0b00c7
-			public const int nav_all_sessions = 2131427527;
+			// aapt resource value: 0x7f0b00ce
+			public const int nav_about = 2131427534;
 			
 			// aapt resource value: 0x7f0b00c9
-			public const int nav_map = 2131427529;
-			
-			// aapt resource value: 0x7f0b00c8
-			public const int nav_my_schedule = 2131427528;
-			
-			// aapt resource value: 0x7f0b00ca
-			public const int nav_settings = 2131427530;
+			public const int nav_all_sessions = 2131427529;
 			
 			// aapt resource value: 0x7f0b00cb
-			public const int nav_sponsors = 2131427531;
+			public const int nav_map = 2131427531;
+			
+			// aapt resource value: 0x7f0b00ca
+			public const int nav_my_schedule = 2131427530;
+			
+			// aapt resource value: 0x7f0b00cc
+			public const int nav_settings = 2131427532;
+			
+			// aapt resource value: 0x7f0b00cd
+			public const int nav_sponsors = 2131427533;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int nav_view = 2131427438;
@@ -2533,8 +2590,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0071
 			public const int recycler_view = 2131427441;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int reveal_view = 2131427518;
+			// aapt resource value: 0x7f0b00c0
+			public const int reveal_view = 2131427520;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int right = 2131427354;
@@ -2644,8 +2701,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b001b
 			public const int start = 2131427355;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int status_bar_latest_event_content = 2131427506;
+			// aapt resource value: 0x7f0b00b4
+			public const int status_bar_latest_event_content = 2131427508;
 			
 			// aapt resource value: 0x7f0b0067
 			public const int submit_area = 2131427431;
@@ -2659,17 +2716,17 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0090
 			public const int tag_container = 2131427472;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int text = 2131427514;
+			// aapt resource value: 0x7f0b00bc
+			public const int text = 2131427516;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int text2 = 2131427512;
+			// aapt resource value: 0x7f0b00ba
+			public const int text2 = 2131427514;
 			
 			// aapt resource value: 0x7f0b004f
 			public const int textSpacerNoButtons = 2131427407;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int time = 2131427510;
+			// aapt resource value: 0x7f0b00b8
+			public const int time = 2131427512;
 			
 			// aapt resource value: 0x7f0b0045
 			public const int title = 2131427397;
@@ -2689,8 +2746,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b00a3
 			public const int txt_bugreport = 2131427491;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int txt_building = 2131427522;
+			// aapt resource value: 0x7f0b00c4
+			public const int txt_building = 2131427524;
 			
 			// aapt resource value: 0x7f0b0092
 			public const int txt_category = 2131427474;
@@ -2707,11 +2764,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0b0084
 			public const int txt_license = 2131427460;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int txt_name = 2131427521;
+			// aapt resource value: 0x7f0b00c3
+			public const int txt_name = 2131427523;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int txt_nav_header_title = 2131427503;
+			// aapt resource value: 0x7f0b00b1
+			public const int txt_nav_header_title = 2131427505;
 			
 			// aapt resource value: 0x7f0b0091
 			public const int txt_place = 2131427473;
@@ -2989,64 +3046,67 @@ namespace DroidKaigi2016Xamarin.Droid
 			public const int item_session = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int nav_header = 2130968629;
+			public const int likeview = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_media_action = 2130968630;
+			public const int nav_header = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_media_cancel_action = 2130968631;
+			public const int notification_media_action = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_big_media = 2130968632;
+			public const int notification_media_cancel_action = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_big_media_narrow = 2130968633;
+			public const int notification_template_big_media = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_lines = 2130968634;
+			public const int notification_template_big_media_narrow = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_media = 2130968635;
+			public const int notification_template_lines = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_part_chronometer = 2130968636;
+			public const int notification_template_media = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_part_time = 2130968637;
+			public const int notification_template_part_chronometer = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int part_loading = 2130968638;
+			public const int notification_template_part_time = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int select_dialog_item_material = 2130968639;
+			public const int part_loading = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int select_dialog_multichoice_material = 2130968640;
+			public const int select_dialog_item_material = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int select_dialog_singlechoice_material = 2130968641;
+			public const int select_dialog_multichoice_material = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int support_simple_spinner_dropdown_item = 2130968642;
+			public const int select_dialog_singlechoice_material = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int toolbar_search = 2130968643;
+			public const int support_simple_spinner_dropdown_item = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int view_map_search = 2130968644;
+			public const int toolbar_search = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int view_map_search_item = 2130968645;
+			public const int view_map_search = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int view_search_places_and_categories = 2130968646;
+			public const int view_map_search_item = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int view_speaker_sns_icons = 2130968647;
+			public const int view_search_places_and_categories = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int view_sponsor_image = 2130968648;
+			public const int view_speaker_sns_icons = 2130968648;
+			
+			// aapt resource value: 0x7f040049
+			public const int view_sponsor_image = 2130968649;
 			
 			static Layout()
 			{
@@ -4924,9 +4984,9 @@ namespace DroidKaigi2016Xamarin.Droid
 			{
 					16842927,
 					16842948,
-					2130772251,
-					2130772252,
-					2130772253};
+					2130772262,
+					2130772263,
+					2130772264};
 			
 			// aapt resource value: 0
 			public const int FlowLayout_android_gravity = 0;
@@ -4946,8 +5006,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			public static int[] FlowLayout_LayoutParams = new int[]
 			{
 					16842931,
-					2130772254,
-					2130772255};
+					2130772265,
+					2130772266};
 			
 			// aapt resource value: 0
 			public const int FlowLayout_LayoutParams_android_layout_gravity = 0;
@@ -4972,6 +5032,53 @@ namespace DroidKaigi2016Xamarin.Droid
 			
 			// aapt resource value: 2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
+			
+			public static int[] LikeButton = new int[]
+			{
+					2130772251,
+					2130772252,
+					2130772253,
+					2130772254,
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772258,
+					2130772259,
+					2130772260,
+					2130772261};
+			
+			// aapt resource value: 10
+			public const int LikeButton_anim_scale_factor = 10;
+			
+			// aapt resource value: 7
+			public const int LikeButton_circle_end_color = 7;
+			
+			// aapt resource value: 6
+			public const int LikeButton_circle_start_color = 6;
+			
+			// aapt resource value: 4
+			public const int LikeButton_dots_primary_color = 4;
+			
+			// aapt resource value: 5
+			public const int LikeButton_dots_secondary_color = 5;
+			
+			// aapt resource value: 9
+			public const int LikeButton_enabled = 9;
+			
+			// aapt resource value: 1
+			public const int LikeButton_icon_size = 1;
+			
+			// aapt resource value: 0
+			public const int LikeButton_icon_type = 0;
+			
+			// aapt resource value: 2
+			public const int LikeButton_like_drawable = 2;
+			
+			// aapt resource value: 8
+			public const int LikeButton_liked = 8;
+			
+			// aapt resource value: 3
+			public const int LikeButton_unlike_drawable = 3;
 			
 			public static int[] LinearLayoutCompat = new int[]
 			{
@@ -5275,8 +5382,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			
 			public static int[] SearchToolbar = new int[]
 			{
-					2130772256,
-					2130772257};
+					2130772267,
+					2130772268};
 			
 			// aapt resource value: 0
 			public const int SearchToolbar_searchFocus = 0;
