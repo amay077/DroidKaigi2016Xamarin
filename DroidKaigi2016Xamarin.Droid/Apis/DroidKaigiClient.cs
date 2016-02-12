@@ -3,6 +3,7 @@ using Refit;
 using System.Threading.Tasks;
 using DroidKaigi2016Xamarin.Core.Models;
 using System.Collections.Generic;
+using Stiletto;
 
 namespace DroidKaigi2016Xamarin.Core.Apis
 {
@@ -14,6 +15,7 @@ namespace DroidKaigi2016Xamarin.Core.Apis
 
     }    
 
+    [Singleton]
     public class DroidKaigiClient
     {
         private static readonly string END_POINT = "https://raw.githubusercontent.com";
@@ -21,7 +23,7 @@ namespace DroidKaigi2016Xamarin.Core.Apis
 
         private readonly IDroidKaigiService service;
 
-//        @Inject
+        [Inject]
         public DroidKaigiClient() 
         {
 

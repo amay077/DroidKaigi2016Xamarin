@@ -76,9 +76,6 @@
     <Reference Include="AndroidFlowLayout">
       <HintPath>..\packages\AndroidFlowLayout.1.9.0.1\lib\monoandroid403\AndroidFlowLayout.dll</HintPath>
     </Reference>
-    <Reference Include="Stiletto">
-      <HintPath>..\packages\Stiletto.0.3.1.0\Lib\MonoAndroid\Stiletto.dll</HintPath>
-    </Reference>
     <Reference Include="Square.OkIO">
       <HintPath>..\packages\Square.OkIO.1.5.0.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
     </Reference>
@@ -97,6 +94,24 @@
     </Reference>
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Basement">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Basement.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Base">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Base.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Maps">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Maps.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.AppIndexing">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.AppIndexing.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.AppIndexing.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Ads">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Ads.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.GooglePlayServices.Analytics">
+      <HintPath>..\packages\Xamarin.GooglePlayServices.Analytics.27.0.0.0\lib\MonoAndroid41\Xamarin.GooglePlayServices.Analytics.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -120,10 +135,26 @@
     <Compile Include="Widgets\SpaceItemDecoration.cs" />
     <Compile Include="Utils\DataBindingAttributeUtil.cs" />
     <Compile Include="Widgets\Transformations\CropCircleTransformation.cs" />
-    <Compile Include="Extensions\ImageViewExtension.cs" />
     <Compile Include="Fragments\SessionItemViewBinder.cs" />
     <Compile Include="Extensions\ViewExtension.cs" />
     <Compile Include="Activities\ActivityNavigator.cs" />
+    <Compile Include="DIs\ActivitiModule.cs" />
+    <Compile Include="DIs\AppModule.cs" />
+    <Compile Include="DIs\AppComponent.cs" />
+    <Compile Include="DIs\ActivityComponent.cs" />
+    <Compile Include="Extensions\PageExtension.cs" />
+    <Compile Include="Models\MainContentStateBrokerProvider.cs" />
+    <Compile Include="Utils\AnalyticsTracker.cs" />
+    <Compile Include="DIs\FragmentComponent.cs" />
+    <Compile Include="DIs\FragmentModule.cs" />
+    <Compile Include="Apis\DroidKaigiClient.cs" />
+    <Compile Include="Activities\SessionDetailActivity.cs" />
+    <Compile Include="Activities\SessionDetailActivityBinding.cs" />
+    <Compile Include="Fragments\SessionDetailFragment.cs" />
+    <Compile Include="Fragments\SessionDetailFragmentBinding.cs" />
+    <Compile Include="Widgets\SpeakerSnsIconsView.cs" />
+    <Compile Include="Widgets\SpeakerSnsIconsViewBinding.cs" />
+    <Compile Include="Extensions\DataBindingAttributeExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -138,6 +169,9 @@
     <Folder Include="Extensions\" />
     <Folder Include="Widgets\" />
     <Folder Include="Widgets\Transformations\" />
+    <Folder Include="DIs\" />
+    <Folder Include="Models\" />
+    <Folder Include="Apis\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets" Condition="Exists('..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets')" />
@@ -336,6 +370,10 @@
     <ProjectReference Include="..\LikeButton\LikeButton.csproj">
       <Project>{6248D6DD-76F1-4A30-959C-49D380C0F07C}</Project>
       <Name>LikeButton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\stiletto\Stiletto.Android\Stiletto.Android.csproj">
+      <Project>{469A3FD7-78E9-4E31-B801-05B8861FD17E}</Project>
+      <Name>Stiletto.Android</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

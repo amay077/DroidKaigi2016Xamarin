@@ -13,6 +13,9 @@ using DroidKaigi2016Xamarin.Core.Apis;
 using System.Reactive.Threading.Tasks;
 using System.Reactive.Concurrency;
 using Android.Util;
+using Stiletto;
+using DroidKaigi2016Xamarin.Droid.Activities;
+using System.Threading;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -20,16 +23,17 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
     {
         public static readonly string TAG = typeof(SessionsFragment).Name;
 
-//    @Inject
-        DroidKaigiClient client = new DroidKaigiClient();
+        [Inject]
+        public DroidKaigiClient Client { get; set; }
 
 //    @Inject
 //    SessionDao dao;
-        CompositeDisposable compositeSubscription = new CompositeDisposable();
-//    @Inject
-//    ActivityNavigator activityNavigator;
-//    @Inject
-//    MainContentStateBrokerProvider brokerProvider;
+        [Inject]
+        public CompositeDisposable CompositeSubscription { get; set; }
+        [Inject]
+        public ActivityNavigator ActivityNavigator { get; set; }
+        [Inject]
+        public MainContentStateBrokerProvider BrokerProvider { get; set; }
 
         private SessionsPagerAdapter adapter;
         private SessionsFragmentBinding binding;
@@ -45,16 +49,15 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             HasOptionsMenu = true;
             InitViewPager();
             InitEmptyView();
-//            compositeSubscription.Add(LoadData());
-            LoadData();
-//            compositeSubscription.Add(FetchAndSave());
+            CompositeSubscription.Add(LoadData());
+            CompositeSubscription.Add(FetchAndSave());
             return binding.Root;
         }
 
         public override void OnAttach(Android.Content.Context context)
         {
             base.OnAttach(context);
-//        MainApplication.getComponent(this).inject(this);
+            MainApplication.GetComponent(this).Inject(this);
         }
 
         private void InitViewPager() 
@@ -68,7 +71,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         {
             binding.emptyViewButton.Click += (sender, e) => 
                 {
-//                    brokerProvider.get().set(Page.ALL_SESSIONS);
+                    BrokerProvider.Get().Set(Page.ALL_SESSIONS);
                 };
         }
 
@@ -79,52 +82,14 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe();
-            throw new NotImplementedException("FetchAndSave");
+            return Disposable.Empty;
         }
 
         protected IDisposable LoadData() 
         {
-//            var sessions = new List<Session>
-//            {
-//                new Session
-//                {
-//                        id = 1,
-//                        title = "OSSの動向を捉えた実装方針",
-//                        description = "■ 概要\n 近年、Androidアプリ開発において、どんなライブラリが存在するのか知っておくのは必須といっても過言ではないでしょう。\n しかし、初めてAndroidアプリの開発文化に触れてみて、業界としてどういうものがスタンダードになっているのか\n みんなが何に注目しているのかを知るのには少し経験が必要になります。\n 代表的なものを中心に、個人的に今から作るとしたらこんな感じにしようかなっていうのを話していければと思います。\n\n■ 対象者\n　Android 初級 〜 中級\n\n■ 話すこと\n 最低限知っておくべき、各ライブラリのメリット・デメリットを簡単に説明します。\n  また、最後に、自分ならこうする！みたいなのもまとめとして話したいと思います。\n　- 開発環境\n　- Language(Java8, Kotlin)\n　　Java8に近いものを実現するためのライブラリ(Lightweight-Stream-API, Retrolambda, ThreeTenABP)\n　- Support Library (AppCompat, Design, Annotations, RecyclerView ...etc)\n　- DataBinding\n　- Network (Volley, Retrofit OkHttp ...etc)\n　- Serialization (GSON, ProtoBuf)\n　- Image Loader (Picasso, Glide, Fresco ...etc)\n　- Effect (GPUImage ...etc)\n　- DI (ButterKnife, Dagger, RoboGuice)\n　- FRP (RxJava, RxAndroid, RxLifecycle ...etc)\n　- DB/ORM (Realm, ActiveAndroid, RxPreferences, Sqlbrite ...etc)\n　- Pub/Sub (Otto, EventBus ...etc)\n　- UI (ObservableScrollview, Calligraphy ...etc)\n　- Debug (Crashlytics, Timber, Hugo, Steho, LeakCanary, Takt ...etc)",
-//                        stime = DateTime.Parse("2016-02-18 10:00:00"),
-//                        etime = DateTime.Parse("2016-02-18 11:00:00"),
-//                        language_id = "ja",
-//                        slide_url = "",
-//                        speaker = new Speaker 
-//                            {
-//                                id = 1,
-//                                name = "wasabeef",
-//                                image_url = "https://pbs.twimg.com/profile_images/427481863343452160/i-G-x-Gw.jpeg",
-//                                twitter_name = "wasabeef_jp",
-//                                github_name = "wasabeef"
-//                            },
-//                        category = new Category
-//                            {
-//                                id = 1,
-//                                name = "基調講演"
-//                            },
-//                        place = new Place
-//                            {
-//                                id = 1,
-//                                name = "基調講演会場"
-//                            }
-//                },
-//                new Session
-//                {
-//                    title = "SessionB",
-//                    stime = DateTime.Now
-//                }
-//            };
-//
-//            GroupByDateSessions(sessions);
-
-            return client.GetSessions().ToObservable()
+            return Client.GetSessions().ToObservable()
                 .SubscribeOn(Scheduler.Default)
+                .ObserveOn(SynchronizationContext.Current)
                 .Subscribe(
                     GroupByDateSessions, 
                     throwable => Log.Error(TAG, "Load failed", throwable));
@@ -143,8 +108,6 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //                    this::groupByDateSessions,
 //                    throwable -> Log.e(TAG, "Load failed", throwable)
 //                );
-          //  throw new NotImplementedException();
-            return null;
         }
 
         protected void ShowEmptyView() 
@@ -166,7 +129,9 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                 if (sessionsByDate.ContainsKey(key)) 
                 {
                     sessionsByDate[key].Add(session);
-                } else {
+                } 
+                else 
+                {
                     var list = new List<Session>();
                     list.Add(session);
                     sessionsByDate.Add(key, list);
@@ -206,7 +171,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             switch (item.ItemId) 
             {
                 case Resource.Id.item_search:
-//                    activityNavigator.showSearch(Activity);
+                    ActivityNavigator.ShowSearch(Activity);
                     break;
             }
 

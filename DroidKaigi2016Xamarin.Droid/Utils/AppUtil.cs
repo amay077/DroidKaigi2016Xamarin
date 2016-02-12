@@ -29,12 +29,12 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             return TWITTER_URL + name;
         }
 
-        public static string getGitHubUrl(string name) 
+        public static string GetGitHubUrl(string name) 
         {
             return GITHUB_URL + name;
         }
 
-        public static string getFacebookUrl(string name) 
+        public static string GetFacebookUrl(string name) 
         {
             return FACEBOOK_URL + name;
         }
@@ -120,7 +120,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             }
         }
 
-        public static string getVersionName(Context context) 
+        public static string GetVersionName(Context context) 
         {
             try 
             {
@@ -156,7 +156,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             textView.MovementMethod = LinkMovementMethod.Instance;
         }
 
-        public static void showWebPage(Activity activity, string url) 
+        public static void ShowWebPage(Activity activity, string url) 
         {
 //            CustomTabsIntent intent = new CustomTabsIntent.Builder()
 //                .setShowTitle(true)

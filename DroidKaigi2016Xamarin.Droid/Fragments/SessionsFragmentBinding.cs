@@ -20,7 +20,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             return new SessionsFragmentBinding(inflater, root, attachToRoot);
         }
 
-        public SessionsFragmentBinding(LayoutInflater inflater, ViewGroup root, bool attachToRoot)
+        private SessionsFragmentBinding(LayoutInflater inflater, ViewGroup root, bool attachToRoot)
         {
             Root = inflater.Inflate(Resource.Layout.fragment_sessions, root, attachToRoot);
             viewPager = Root.FindViewById<ViewPager>(Resource.Id.view_pager);

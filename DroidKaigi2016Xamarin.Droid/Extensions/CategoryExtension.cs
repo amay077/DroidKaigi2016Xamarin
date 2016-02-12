@@ -55,7 +55,7 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
             }
         }
 
-        public static int getPaleColorResId(this Category self)  
+        public static int GetPaleColorResId(this Category self)  
         {
             switch (self.id) 
             {

@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 //using Android.Support.V4.Widget;
@@ -10,6 +11,11 @@ using Android.Content.PM;
 using Android.Content;
 using Android.Support.V4.View;
 using DroidKaigi2016Xamarin.Droid.Fragments;
+using DroidKaigi2016Xamarin.Droid.Utils;
+using System.Reactive.Disposables;
+using Stiletto;
+using DroidKaigi2016Xamarin.Core.Models;
+using DroidKaigi2016Xamarin.Droid.Extensions;
 
 namespace DroidKaigi2016Xamarin.Droid.Activities
 {
@@ -26,27 +32,46 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         Categories = new []{ Intent.CategoryDefault })]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        Android.Support.V4.App.Fragment currentFragment;
-        MainActivityBinding binding;
+        private static readonly string TAG = typeof(MainActivity).Name;
+        private static readonly int BACK_BUTTON_PRESSED_INTERVAL = 3000;
+
+        [Inject]
+        public AnalyticsTracker AnalyticsTracker { get; set; }
+
+        [Inject]
+        public MainContentStateBrokerProvider BrokerProvider { get; set; }
+
+        [Inject]
+        public CompositeDisposable Subscription { get; set; }
+
+        private MainActivityBinding binding;
+        private Android.Support.V4.App.Fragment currentFragment;
+        private bool isPressedBackOnce = false;
+
+        static void Start(Activity activity) 
+        {
+            Intent intent = new Intent(activity, typeof(MainActivity));
+            activity.StartActivity(intent);
+            activity.OverridePendingTransition(Resource.Animation.activity_fade_enter, Resource.Animation.activity_fade_exit);
+        }
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-//            AppUtil.initLocale(this);
-            SetContentView(Resource.Layout.activity_main);
+            AppUtil.InitLocale(this);
             binding = MainActivityBinding.SetContentView(this, Resource.Layout.activity_main);
-//            MainApplication.getComponent(this).inject(this);
-//
-//            subscription.add(brokerProvider.get().observe().subscribe(page -> {
-//                toggleToolbarElevation(page.shouldToggleToolbar());
-//                changePage(page.getTitleResId(), page.createFragment());
-//                binding.navView.setCheckedItem(page.getMenuId());
-//            }));
+            MainApplication.GetComponent(this).Inject(this);
+
+            Subscription.Add(BrokerProvider.Get().Observe().Subscribe(page => 
+                {
+                    ToggleToolbarElevation(page.ShouldToggleToolbar());
+                    ChangePage(page.GetTitleResId(), page.CreateFragment());
+                    binding.navView.SetCheckedItem(page.GetMenuId());
+                }));
             InitView();
 
             ReplaceFragment(SessionsFragment.NewInstance());
-
-
         }
 
         private void InitView() 
@@ -70,13 +95,44 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
             currentFragment = fragment;
         }
 
-        public bool OnNavigationItemSelected(IMenuItem menuItem)
+        protected override void OnStart() 
+        {
+            base.OnStart();
+            AnalyticsTracker.SendScreenView("main");
+        }
+
+        public override void OnBackPressed() 
+        {
+            if (binding.drawer.IsDrawerOpen(GravityCompat.Start)) 
+            {
+                binding.drawer.CloseDrawer(GravityCompat.Start);
+            } 
+            else if (isPressedBackOnce) 
+            {
+                base.OnBackPressed();
+                return;
+            }
+
+            isPressedBackOnce = true;
+            ShowSnackBar(GetString(Resource.String.app_close_confirm));
+            new Handler().PostDelayed(() => isPressedBackOnce = false, BACK_BUTTON_PRESSED_INTERVAL);
+        }
+
+        private void ShowSnackBar(string text) 
+        {
+            Snackbar.Make(binding.Root, text, Snackbar.LengthLong)
+                .SetAction(Resource.String.app_close_now, v => Finish())
+                .Show();
+        }
+
+
+        public bool OnNavigationItemSelected(IMenuItem item)
         {
             binding.drawer.CloseDrawer(GravityCompat.Start);
 
-//            Page page = Page.forMenuId(item);
-//            ToggleToolbarElevation(page.shouldToggleToolbar());
-//            ChangePage(page.getTitleResId(), page.createFragment());
+            var page = item.ToPage();
+            ToggleToolbarElevation(page.ShouldToggleToolbar());
+            ChangePage(page.GetTitleResId(), page.CreateFragment());
 
             return true;
         }

@@ -36,7 +36,7 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
 //        @BindingAdapter("sessionFab")
         public static int GetSessionFabRippleColor(this Session session, Context context) 
         {
-            return ContextCompat.GetColor(context, session.category.getPaleColorResId());
+            return ContextCompat.GetColor(context, session.category.GetPaleColorResId());
         }
 
         public static bool GetSessionFabChecked(this Session session) 

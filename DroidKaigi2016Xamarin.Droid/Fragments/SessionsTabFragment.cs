@@ -13,6 +13,7 @@ using DroidKaigi2016Xamarin.Droid.Widgets;
 using DroidKaigi2016Xamarin.Droid.Extensions;
 using io.github.droidkaigi.confsched.widget;
 using DroidKaigi2016Xamarin.Droid.Activities;
+using Stiletto;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -25,8 +26,8 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 //        @Inject
 //        SessionDao dao;
 
-//        @Inject
-        ActivityNavigator activityNavigator = ActivityNavigator.Instance;
+        [Inject]
+        public ActivityNavigator ActivityNavigator { get; set; }
 
         private SessionsAdapter adapter;
         private SessionsTabFragmentBinding binding;
@@ -51,7 +52,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         public override void OnAttach(Android.Content.Context context)
         {
             base.OnAttach(context);
-//            MainApplication.getComponent(this).inject(this);
+            MainApplication.GetComponent(this).Inject(this);
         }
 
         public override Android.Views.View OnCreateView(Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Bundle savedInstanceState)
@@ -63,7 +64,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
         private void BindData() 
         {
-            adapter = new SessionsAdapter(Activity);
+            adapter = new SessionsAdapter(ActivityNavigator, Activity);
 
             binding.recyclerView.SetAdapter(adapter);
             binding.recyclerView.SetLayoutManager(new LinearLayoutManager(Activity));
@@ -93,8 +94,11 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
         class SessionsAdapter : ArrayRecyclerAdapter<Session>
         {
-            public SessionsAdapter(Activity activity) : base(activity)
+            private readonly ActivityNavigator activityNavigator;
+
+            public SessionsAdapter(ActivityNavigator activityNavigator, Activity activity) : base(activity)
             {
+                this.activityNavigator = activityNavigator;
             }
 
             public void Refresh(Session session) {
@@ -154,7 +158,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
                 binding.cardView.SetOnClickAction(v =>
                     {
-                        ActivityNavigator.Instance.ShowSessionDetail(this.Context as Activity, session, REQ_DETAIL);
+                        activityNavigator.ShowSessionDetail(this.Context as Activity, session, REQ_DETAIL);
                     });
 //
 //                binding.cardView.setOnClickListener(v ->
