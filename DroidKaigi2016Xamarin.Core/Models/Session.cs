@@ -17,6 +17,16 @@ namespace DroidKaigi2016Xamarin.Core.Models
         public string slide_url { get; set; }    
 
         public bool IsChecked { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Session &&  (obj as Session).id == id || base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return id;
+        }
     }
 }
 

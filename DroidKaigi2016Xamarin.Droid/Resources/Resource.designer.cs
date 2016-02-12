@@ -26,6 +26,7 @@ namespace DroidKaigi2016Xamarin.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Splat.Resource.String.library_name = global::DroidKaigi2016Xamarin.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
@@ -3442,47 +3443,47 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f08003c
 			public const int abc_toolbar_collapse_description = 2131230780;
 			
-			// aapt resource value: 0x7f080053
-			public const int about = 2131230803;
-			
-			// aapt resource value: 0x7f080068
-			public const int about_conference = 2131230824;
+			// aapt resource value: 0x7f080054
+			public const int about = 2131230804;
 			
 			// aapt resource value: 0x7f080069
-			public const int about_conference_descriptions = 2131230825;
-			
-			// aapt resource value: 0x7f080075
-			public const int about_inquiry_url = 2131230837;
-			
-			// aapt resource value: 0x7f08006d
-			public const int about_license = 2131230829;
-			
-			// aapt resource value: 0x7f08006e
-			public const int about_questionnaire = 2131230830;
+			public const int about_conference = 2131230825;
 			
 			// aapt resource value: 0x7f08006a
-			public const int about_rep = 2131230826;
+			public const int about_conference_descriptions = 2131230826;
 			
-			// aapt resource value: 0x7f08006b
-			public const int about_social = 2131230827;
+			// aapt resource value: 0x7f080076
+			public const int about_inquiry_url = 2131230838;
 			
-			// aapt resource value: 0x7f08006c
-			public const int about_terms = 2131230828;
+			// aapt resource value: 0x7f08006e
+			public const int about_license = 2131230830;
 			
 			// aapt resource value: 0x7f08006f
-			public const int about_version_prefix = 2131230831;
+			public const int about_questionnaire = 2131230831;
+			
+			// aapt resource value: 0x7f08006b
+			public const int about_rep = 2131230827;
+			
+			// aapt resource value: 0x7f08006c
+			public const int about_social = 2131230828;
+			
+			// aapt resource value: 0x7f08006d
+			public const int about_terms = 2131230829;
+			
+			// aapt resource value: 0x7f080070
+			public const int about_version_prefix = 2131230832;
 			
 			// aapt resource value: 0x7f080002
 			public const int accept = 2131230722;
 			
-			// aapt resource value: 0x7f08004e
-			public const int all_sessions = 2131230798;
-			
-			// aapt resource value: 0x7f080071
-			public const int app_close_confirm = 2131230833;
+			// aapt resource value: 0x7f08004f
+			public const int all_sessions = 2131230799;
 			
 			// aapt resource value: 0x7f080072
-			public const int app_close_now = 2131230834;
+			public const int app_close_confirm = 2131230834;
+			
+			// aapt resource value: 0x7f080073
+			public const int app_close_now = 2131230835;
 			
 			// aapt resource value: 0x7f08003e
 			public const int app_name = 2131230782;
@@ -3496,17 +3497,17 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f080008
 			public const int auth_google_play_services_client_google_display_name = 2131230728;
 			
-			// aapt resource value: 0x7f080076
-			public const int bug_report_url = 2131230838;
+			// aapt resource value: 0x7f080077
+			public const int bug_report_url = 2131230839;
 			
-			// aapt resource value: 0x7f080044
-			public const int cancel = 2131230788;
+			// aapt resource value: 0x7f080045
+			public const int cancel = 2131230789;
 			
 			// aapt resource value: 0x7f080029
 			public const int character_counter_pattern = 2131230761;
 			
-			// aapt resource value: 0x7f080042
-			public const int close = 2131230786;
+			// aapt resource value: 0x7f080043
+			public const int close = 2131230787;
 			
 			// aapt resource value: 0x7f08000c
 			public const int common_android_wear_notification_needs_update_text = 2131230732;
@@ -3613,116 +3614,119 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f080003
 			public const int decline = 2131230723;
 			
-			// aapt resource value: 0x7f080049
-			public const int description = 2131230793;
-			
-			// aapt resource value: 0x7f08004c
-			public const int icon = 2131230796;
-			
-			// aapt resource value: 0x7f08005e
-			public const int lang_ar = 2131230814;
-			
-			// aapt resource value: 0x7f08005f
-			public const int lang_en = 2131230815;
-			
-			// aapt resource value: 0x7f080060
-			public const int lang_ja = 2131230816;
-			
-			// aapt resource value: 0x7f080050
-			public const int map = 2131230800;
-			
-			// aapt resource value: 0x7f080058
-			public const int map_ab_building = 2131230808;
-			
-			// aapt resource value: 0x7f080057
-			public const int map_ab_name = 2131230807;
-			
-			// aapt resource value: 0x7f08005d
-			public const int map_address = 2131230813;
-			
-			// aapt resource value: 0x7f08005a
-			public const int map_cd_building = 2131230810;
-			
-			// aapt resource value: 0x7f080059
-			public const int map_cd_name = 2131230809;
-			
-			// aapt resource value: 0x7f080056
-			public const int map_main_building = 2131230806;
-			
-			// aapt resource value: 0x7f080055
-			public const int map_main_name = 2131230805;
-			
-			// aapt resource value: 0x7f08005c
-			public const int map_party_building = 2131230812;
-			
-			// aapt resource value: 0x7f08005b
-			public const int map_party_name = 2131230811;
-			
-			// aapt resource value: 0x7f08004f
-			public const int my_schedule = 2131230799;
-			
-			// aapt resource value: 0x7f080073
-			public const int my_schedule_empty = 2131230835;
-			
-			// aapt resource value: 0x7f080074
-			public const int my_schedule_go_to_session_list = 2131230836;
-			
-			// aapt resource value: 0x7f080043
-			public const int ok = 2131230787;
-			
-			// aapt resource value: 0x7f080041
-			public const int open = 2131230785;
-			
-			// aapt resource value: 0x7f080054
-			public const int search = 2131230804;
-			
 			// aapt resource value: 0x7f08004a
-			public const int search_by_category = 2131230794;
-			
-			// aapt resource value: 0x7f08004b
-			public const int search_by_place = 2131230795;
-			
-			// aapt resource value: 0x7f080070
-			public const int search_hint = 2131230832;
+			public const int description = 2131230794;
 			
 			// aapt resource value: 0x7f08004d
-			public const int send_feedback = 2131230797;
+			public const int icon = 2131230797;
 			
-			// aapt resource value: 0x7f080040
-			public const int session_detail = 2131230784;
+			// aapt resource value: 0x7f08005f
+			public const int lang_ar = 2131230815;
 			
-			// aapt resource value: 0x7f080047
-			public const int session_time_range = 2131230791;
-			
-			// aapt resource value: 0x7f080051
-			public const int settings = 2131230801;
-			
-			// aapt resource value: 0x7f080063
-			public const int settings_bugreport = 2131230819;
+			// aapt resource value: 0x7f080060
+			public const int lang_en = 2131230816;
 			
 			// aapt resource value: 0x7f080061
-			public const int settings_language = 2131230817;
+			public const int lang_ja = 2131230817;
 			
-			// aapt resource value: 0x7f080062
-			public const int settings_language_description = 2131230818;
+			// aapt resource value: 0x7f08003f
+			public const int library_name = 2131230783;
 			
-			// aapt resource value: 0x7f080046
-			public const int speaker = 2131230790;
+			// aapt resource value: 0x7f080051
+			public const int map = 2131230801;
 			
-			// aapt resource value: 0x7f080066
-			public const int sponsor_category_food = 2131230822;
+			// aapt resource value: 0x7f080059
+			public const int map_ab_building = 2131230809;
 			
-			// aapt resource value: 0x7f080067
-			public const int sponsor_category_normal = 2131230823;
+			// aapt resource value: 0x7f080058
+			public const int map_ab_name = 2131230808;
 			
-			// aapt resource value: 0x7f080064
-			public const int sponsor_category_platinum = 2131230820;
+			// aapt resource value: 0x7f08005e
+			public const int map_address = 2131230814;
 			
-			// aapt resource value: 0x7f080065
-			public const int sponsor_category_video = 2131230821;
+			// aapt resource value: 0x7f08005b
+			public const int map_cd_building = 2131230811;
+			
+			// aapt resource value: 0x7f08005a
+			public const int map_cd_name = 2131230810;
+			
+			// aapt resource value: 0x7f080057
+			public const int map_main_building = 2131230807;
+			
+			// aapt resource value: 0x7f080056
+			public const int map_main_name = 2131230806;
+			
+			// aapt resource value: 0x7f08005d
+			public const int map_party_building = 2131230813;
+			
+			// aapt resource value: 0x7f08005c
+			public const int map_party_name = 2131230812;
+			
+			// aapt resource value: 0x7f080050
+			public const int my_schedule = 2131230800;
+			
+			// aapt resource value: 0x7f080074
+			public const int my_schedule_empty = 2131230836;
+			
+			// aapt resource value: 0x7f080075
+			public const int my_schedule_go_to_session_list = 2131230837;
+			
+			// aapt resource value: 0x7f080044
+			public const int ok = 2131230788;
+			
+			// aapt resource value: 0x7f080042
+			public const int open = 2131230786;
+			
+			// aapt resource value: 0x7f080055
+			public const int search = 2131230805;
+			
+			// aapt resource value: 0x7f08004b
+			public const int search_by_category = 2131230795;
+			
+			// aapt resource value: 0x7f08004c
+			public const int search_by_place = 2131230796;
+			
+			// aapt resource value: 0x7f080071
+			public const int search_hint = 2131230833;
+			
+			// aapt resource value: 0x7f08004e
+			public const int send_feedback = 2131230798;
+			
+			// aapt resource value: 0x7f080041
+			public const int session_detail = 2131230785;
+			
+			// aapt resource value: 0x7f080048
+			public const int session_time_range = 2131230792;
 			
 			// aapt resource value: 0x7f080052
-			public const int sponsors = 2131230802;
+			public const int settings = 2131230802;
+			
+			// aapt resource value: 0x7f080064
+			public const int settings_bugreport = 2131230820;
+			
+			// aapt resource value: 0x7f080062
+			public const int settings_language = 2131230818;
+			
+			// aapt resource value: 0x7f080063
+			public const int settings_language_description = 2131230819;
+			
+			// aapt resource value: 0x7f080047
+			public const int speaker = 2131230791;
+			
+			// aapt resource value: 0x7f080067
+			public const int sponsor_category_food = 2131230823;
+			
+			// aapt resource value: 0x7f080068
+			public const int sponsor_category_normal = 2131230824;
+			
+			// aapt resource value: 0x7f080065
+			public const int sponsor_category_platinum = 2131230821;
+			
+			// aapt resource value: 0x7f080066
+			public const int sponsor_category_video = 2131230822;
+			
+			// aapt resource value: 0x7f080053
+			public const int sponsors = 2131230803;
 			
 			// aapt resource value: 0x7f08003d
 			public const int status_bar_notification_info_overflow = 2131230781;
@@ -3733,14 +3737,14 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f080000
 			public const int store_picture_title = 2131230720;
 			
-			// aapt resource value: 0x7f08003f
-			public const int tag_line = 2131230783;
+			// aapt resource value: 0x7f080040
+			public const int tag_line = 2131230784;
 			
-			// aapt resource value: 0x7f080048
-			public const int title = 2131230792;
+			// aapt resource value: 0x7f080049
+			public const int title = 2131230793;
 			
-			// aapt resource value: 0x7f080045
-			public const int yes = 2131230789;
+			// aapt resource value: 0x7f080046
+			public const int yes = 2131230790;
 			
 			static String()
 			{

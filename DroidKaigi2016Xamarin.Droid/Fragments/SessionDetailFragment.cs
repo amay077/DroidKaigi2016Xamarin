@@ -11,6 +11,7 @@ using DroidKaigi2016Xamarin.Droid.Extensions;
 using Android.Views;
 using Android.App;
 using Fragment = Android.Support.V4.App.Fragment;
+using DroidKaigi2016Xamarin.Droid.Daos;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -18,8 +19,8 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
     {
         private static readonly string TAG = typeof(SessionDetailFragment).Name;
 
-//        [Inject]
-//        SessionDao dao;
+        [Inject]
+        public SessionDao Dao { get; set; }
         [Inject]
         public ActivityNavigator ActivityNavigator { get; set; }
 
@@ -72,7 +73,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                     var isChecked = !binding.fab.Selected;
                     binding.fab.Selected = isChecked;
                     session.IsChecked = isChecked;
-//                    dao.UpdateChecked(session);
+                    Dao.UpdateChecked(session).Subscribe(); // await しないのは、保存完了を待つ必要がないから
                     SetResult();
                 });
 

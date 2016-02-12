@@ -154,6 +154,22 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
                     ReplaceFragment(fragment);
                 }, 300);
         }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (currentFragment != null) 
+            {
+                currentFragment.OnActivityResult(requestCode, resultCode == Result.Ok ? -1 : 0, data);
+            }
+        }
+
+        public override void Finish() 
+        {
+            base.Finish();
+            OverridePendingTransition(Resource.Animation.activity_fade_enter, Resource.Animation.activity_fade_exit);
+        }
+
     }
 }
 

@@ -9,7 +9,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
     [Singleton]
     public class ActivityNavigator
     {
-        public void ShowSessionDetail(Activity activity, Session session, int requestCode) {
+        public void ShowSessionDetail(Activity activity, Session session, int requestCode) 
+        {
             SessionDetailActivity.StartForResult(activity, session, requestCode);
         }
 

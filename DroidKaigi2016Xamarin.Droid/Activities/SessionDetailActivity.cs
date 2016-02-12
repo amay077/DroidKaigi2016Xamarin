@@ -40,7 +40,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         public static void StartForResult(Activity activity, Session session, int requestCode) 
         {
-            Intent intent = CreateIntent(activity, session);
+            var intent = CreateIntent(activity, session);
             activity.StartActivityForResult(intent, requestCode);
         }
 

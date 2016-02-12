@@ -14,6 +14,7 @@ using DroidKaigi2016Xamarin.Droid.Extensions;
 using io.github.droidkaigi.confsched.widget;
 using DroidKaigi2016Xamarin.Droid.Activities;
 using Stiletto;
+using DroidKaigi2016Xamarin.Droid.Daos;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -23,8 +24,8 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         private static readonly string ARG_SESSIONS = "sessions";
         private const int REQ_DETAIL = 1;
 
-//        @Inject
-//        SessionDao dao;
+        [Inject]
+        public SessionDao Dao { get; set; }
 
         [Inject]
         public ActivityNavigator ActivityNavigator { get; set; }
@@ -55,7 +56,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             MainApplication.GetComponent(this).Inject(this);
         }
 
-        public override Android.Views.View OnCreateView(Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             binding = SessionsTabFragmentBinding.Inflate(inflater, container, false);
             BindData();
@@ -64,7 +65,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
         private void BindData() 
         {
-            adapter = new SessionsAdapter(ActivityNavigator, Activity);
+            adapter = new SessionsAdapter(ActivityNavigator, Dao, Activity);
 
             binding.recyclerView.SetAdapter(adapter);
             binding.recyclerView.SetLayoutManager(new LinearLayoutManager(Activity));
@@ -80,7 +81,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             switch (requestCode) 
             {
                 case REQ_DETAIL:
-                    if (resultCode == 1 /*Result.Ok*/) 
+                    if (resultCode == -1 /*Result.Ok*/) 
                     {
                         var session = Parcels.Unwrap<Session>(data.GetParcelableExtra(typeof(Session).Name) as IParcelable);
                         if (session != null) 
@@ -95,17 +96,20 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         class SessionsAdapter : ArrayRecyclerAdapter<Session>
         {
             private readonly ActivityNavigator activityNavigator;
+            private readonly SessionDao dao;
 
-            public SessionsAdapter(ActivityNavigator activityNavigator, Activity activity) : base(activity)
+            public SessionsAdapter(ActivityNavigator activityNavigator, SessionDao dao, Activity activity) : base(activity)
             {
                 this.activityNavigator = activityNavigator;
+                this.dao = dao;
             }
 
-            public void Refresh(Session session) {
+            public void Refresh(Session session) 
+            {
                 // TODO It may be heavy logic...
-                for (int i = 0; i < ItemCount; i++) 
+                for (var i = 0; i < ItemCount; i++) 
                 {
-                    Session s = GetItem(i);
+                    var s = GetItem(i);
                     if (session.Equals(s)) 
                     {
                         s.IsChecked = session.IsChecked;
@@ -142,27 +146,20 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                     binding.txtStime.Visibility = ViewStates.Visible;
                 }
 
-//                binding.btnStar.setOnLikeListener(new OnLikeListener() {
-//                    @Override
-//                    public void liked(LikeButton likeButton) {
-//                        session.checked = true;
-//                        dao.updateChecked(session);
-//                    }
-//
-//                    @Override
-//                    public void unLiked(LikeButton likeButton) {
-//                        session.checked = false;
-//                        dao.updateChecked(session);
-//                    }
-//                });
-
-                binding.cardView.SetOnClickAction(v =>
+                binding.btnStar.SetOnLikeAction(
+                    v =>
                     {
-                        activityNavigator.ShowSessionDetail(this.Context as Activity, session, REQ_DETAIL);
+                        session.IsChecked = true;
+                        dao.UpdateChecked(session).Subscribe();
+                    },
+                    v =>
+                    {
+                        session.IsChecked = false;
+                        dao.UpdateChecked(session).Subscribe();
                     });
-//
-//                binding.cardView.setOnClickListener(v ->
-//                    activityNavigator.showSessionDetail(getActivity(), session, REQ_DETAIL));
+
+                binding.cardView.SetOnClickAction(v => 
+                    activityNavigator.ShowSessionDetail(this.Context as Activity, session, REQ_DETAIL));
             }
         }
     }

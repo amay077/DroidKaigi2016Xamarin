@@ -16,6 +16,7 @@ using Android.Util;
 using Stiletto;
 using DroidKaigi2016Xamarin.Droid.Activities;
 using System.Threading;
+using DroidKaigi2016Xamarin.Droid.Daos;
 
 namespace DroidKaigi2016Xamarin.Droid.Fragments
 {
@@ -26,8 +27,8 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
         [Inject]
         public DroidKaigiClient Client { get; set; }
 
-//    @Inject
-//    SessionDao dao;
+        [Inject]
+        public SessionDao Dao { get; set; }
         [Inject]
         public CompositeDisposable CompositeSubscription { get; set; }
         [Inject]
@@ -77,37 +78,31 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
         private IDisposable FetchAndSave() 
         {
-//            return client.getSessions()
-//                .doOnNext(dao::updateAll)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe();
-            return Disposable.Empty;
+            return Client.GetSessions().ToObservable()
+                .Do(sessions => Dao.UpdateAll(sessions).Subscribe()) // await しないのは、保存完了を待つ必要がないから
+                .SubscribeOn(Scheduler.Default)
+                .ObserveOn(SynchronizationContext.Current)
+                .Subscribe();
         }
 
         protected IDisposable LoadData() 
         {
-            return Client.GetSessions().ToObservable()
+            return Dao.FindAll()
+                .SelectMany(sessions => 
+                    {
+                        if (sessions.Count == 0) 
+                        {
+                            return Client.GetSessions().ToObservable()
+                                .Do(x => Dao.UpdateAll(x).Subscribe()); // await しないのは、保存完了を待つ必要がないから
+                        } else {
+                            return Observable.Return(sessions);
+                        }
+                    })
                 .SubscribeOn(Scheduler.Default)
                 .ObserveOn(SynchronizationContext.Current)
                 .Subscribe(
                     GroupByDateSessions, 
                     throwable => Log.Error(TAG, "Load failed", throwable));
-
-//            IObservable<IList<Session>> cachedSessions = dao.findAll();
-//            return cachedSessions.flatMap(sessions -> {
-//                if (sessions.isEmpty()) {
-//                    return client.getSessions().doOnNext(dao::updateAll);
-//                } else {
-//                    return Observable.just(sessions);
-//                }
-//            })
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                    this::groupByDateSessions,
-//                    throwable -> Log.e(TAG, "Load failed", throwable)
-//                );
         }
 
         protected void ShowEmptyView() 
