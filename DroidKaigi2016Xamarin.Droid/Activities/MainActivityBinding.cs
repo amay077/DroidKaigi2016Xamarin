@@ -13,7 +13,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         public readonly DrawerLayout drawer;
         public readonly NavigationView navView;
 
-        public View Root { get; }
+        public ViewGroup Root { get; }
 
         public static MainActivityBinding SetContentView(Activity activity, int layoutId)
         {

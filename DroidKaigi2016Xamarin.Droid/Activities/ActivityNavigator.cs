@@ -26,7 +26,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         public void ShowSearch(Activity activity) 
         {
-//            SearchActivity.start(activity);
+            SearchActivity.Start(activity);
         }
 
         public void ShowFeedback(Context context) 

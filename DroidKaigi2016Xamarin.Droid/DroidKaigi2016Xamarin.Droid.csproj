@@ -125,6 +125,9 @@
     <Reference Include="Akavache.Sqlite3">
       <HintPath>..\packages\akavache.sqlite3.4.1.2\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
     </Reference>
+    <Reference Include="Stiletto">
+      <HintPath>..\packages\Stiletto.0.3.1.0\Lib\MonoAndroid\Stiletto.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,6 +173,12 @@
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
     <Compile Include="Daos\SessionDao.cs" />
     <Compile Include="Extensions\LikeButtonExtension.cs" />
+    <Compile Include="Activities\SearchActivity.cs" />
+    <Compile Include="Activities\SearchActivityBinding.cs" />
+    <Compile Include="Widgets\SearchToolbar.cs" />
+    <Compile Include="Widgets\SearchToolbarBinding.cs" />
+    <Compile Include="Extensions\AppCompatEditTextExtension.cs" />
+    <Compile Include="Utils\LocaleUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -386,10 +395,6 @@
     <ProjectReference Include="..\LikeButton\LikeButton.csproj">
       <Project>{6248D6DD-76F1-4A30-959C-49D380C0F07C}</Project>
       <Name>LikeButton</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\stiletto\Stiletto.Android\Stiletto.Android.csproj">
-      <Project>{469A3FD7-78E9-4E31-B801-05B8861FD17E}</Project>
-      <Name>Stiletto.Android</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
