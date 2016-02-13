@@ -37,6 +37,7 @@
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\MainContentStateBroker.cs" />
     <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\ISearchGroup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets" Condition="Exists('..\packages\refit.2.4.1\build\portable-net45+netcore45+wp8+wpa81+monoandroid+xamarin.ios10\refit.targets')" />

@@ -42,8 +42,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         public ActivityNavigator ActivityNavigator { get;set; }
         [Inject]
         public SessionDao AessionDao { get;set; }
-//        @Inject
-//        PlaceDao placeDao;
+        [Inject]
+        public PlaceDao PlaceDao { get;set; }
 //        @Inject
 //        CategoryDao categoryDao;
 
@@ -52,7 +52,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 //        private SearchResultsAdapter adapter;
         private SearchActivityBinding binding;
 
-        static void Start(Fragment fragment, int requestCode) 
+        public static void Start(Fragment fragment, int requestCode) 
         {
             var intent = new Intent(fragment.Context, typeof(SearchActivity));
             fragment.StartActivityForResult(intent, requestCode);
@@ -81,7 +81,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         private void InitPlacesAndCategoriesView() 
         {
-//            binding.searchPlacesAndCategoriesView.addPlaces(placeDao.findAll());
+            binding.searchPlacesAndCategoriesView.AddPlaces(PlaceDao.FindAll());
 //            binding.searchPlacesAndCategoriesView.addCategories(categoryDao.findAll());
 //            binding.searchPlacesAndCategoriesView.setOnClickSearchGroup(searchGroup -> {
 //                startActivityForResult(SearchedSessionsActivity.createIntent(SearchActivity.this, searchGroup),
