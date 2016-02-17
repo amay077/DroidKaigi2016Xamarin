@@ -4,7 +4,7 @@
 * Retrofit2 -> [Refit](https://github.com/paulcbetts/refit) - paulcbetts
 * Picasso -> [Picasso](https://www.nuget.org/packages/Square.Picasso) - mattleibow
 * OkHttp3 -> N/A
-* Android-Orma -> N/A
+* Android-Orma -> [Akavache](https://github.com/akavache/Akavache) ※Akavache is not ORM.
 * RxAndroid -> N/A
 * ThreeTenABP -> N/A
 * Stetho -> N/A
