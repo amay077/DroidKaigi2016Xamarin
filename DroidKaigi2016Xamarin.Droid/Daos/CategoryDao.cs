@@ -5,14 +5,14 @@ using DroidKaigi2016Xamarin.Core.Models;
 namespace DroidKaigi2016Xamarin.Droid.Daos
 {
     [Singleton]
-    public class PlaceDao
+    public class CategoryDao
     {
         [Inject]
-        public PlaceDao()
+        public CategoryDao()
         {
         }
 
-        public IObservable<Place> FindAll()
+        public IObservable<Category> FindAll()
         {
             throw new NotImplementedException();
         }

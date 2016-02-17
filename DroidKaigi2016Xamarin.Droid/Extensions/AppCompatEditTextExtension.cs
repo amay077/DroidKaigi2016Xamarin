@@ -23,16 +23,16 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
             Action<ICharSequence, int, int, int> onTextChangedHandler)
 
         {
-            AddTextChangedActions(self, new DelegateTextWatcher(
-                ()=>{}, 
-                ()=>{}, 
-                onTextChangedHandler));
+            self.AddTextChangedActions(
+                (s, start, count, after)=>{}, 
+                (s)=>{}, 
+                onTextChangedHandler);
         }
 
         class DelegateTextWatcher : Java.Lang.Object, ITextWatcher
         {
-            private readonly Action<IEditable> afterTextChangedHandler;
             private readonly Action<ICharSequence, int, int, int> beforeTextChangedHandler;
+            private readonly Action<IEditable> afterTextChangedHandler;
             private readonly Action<ICharSequence, int, int, int> onTextChangedHandler;
 
             public DelegateTextWatcher(
@@ -45,14 +45,14 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
                 this.onTextChangedHandler = onTextChangedHandler;
             }
 
-            public void AfterTextChanged(IEditable s)
-            {
-                afterTextChangedHandler(s);
-            }
-
             public void BeforeTextChanged(ICharSequence s, int start, int count, int after)
             {
                 beforeTextChangedHandler(s, start, count, after);
+            }
+
+            public void AfterTextChanged(IEditable s)
+            {
+                afterTextChangedHandler(s);
             }
 
             public void OnTextChanged(ICharSequence s, int start, int before, int count)

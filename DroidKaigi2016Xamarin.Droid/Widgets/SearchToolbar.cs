@@ -9,6 +9,7 @@ using Android.OS;
 using DroidKaigi2016Xamarin.Droid.Extensions;
 using DroidKaigi2016Xamarin.Droid.Utils;
 using Android.Text;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace io.github.droidkaigi.confsched.widget
 {
@@ -90,19 +91,19 @@ namespace io.github.droidkaigi.confsched.widget
                         var shouldClear = false;
                         if (LocaleUtil.ShouldRtl(Context)) 
                         {
-                            int rightEdgeOfRightDrawable = binding.editSearch.Left + GetCloseDrawable().Bounds.Width;
+                            int rightEdgeOfRightDrawable = binding.editSearch.Left + GetCloseDrawable().Bounds.Width();
                             shouldClear = evt.RawX <= rightEdgeOfRightDrawable;
                         }
                         else 
                         {
-                            int leftEdgeOfRightDrawable = binding.editSearch.Right - GetCloseDrawable().Bounds.Width;
+                            int leftEdgeOfRightDrawable = binding.editSearch.Right - GetCloseDrawable().Bounds.Width();
                             shouldClear = evt.RawX >= leftEdgeOfRightDrawable;
                         }
 
                         if (shouldClear) 
                         {
                             ClearText();
-                            return true;
+//                            return true;
                         }
                     }
 

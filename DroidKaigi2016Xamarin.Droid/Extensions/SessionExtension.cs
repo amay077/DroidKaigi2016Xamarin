@@ -59,6 +59,24 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
                 return Resource.String.lang_en;
             }
         }
+
+        public static SearchResult CreateTitleType(this Session session) 
+        {
+            return new SearchResult(session.title, Resource.Drawable.ic_event_note_grey_600_12dp,
+                Resource.String.title, session.speaker.image_url, session);
+        }
+
+        public static SearchResult CreateDescriptionType(this Session session) 
+        {
+            return new SearchResult(session.description, Resource.Drawable.ic_description_grey_600_12dp,
+                Resource.String.description, session.speaker.image_url, session);
+        }
+
+        public static SearchResult CreateSpeakerType(this Session session) 
+        {
+            return new SearchResult(session.speaker.name, Resource.Drawable.ic_person_grey_600_12dp,
+                Resource.String.speaker, session.speaker.image_url, session);
+        }
     }
 }
 

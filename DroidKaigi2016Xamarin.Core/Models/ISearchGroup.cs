@@ -2,11 +2,11 @@
 
 namespace DroidKaigi2016Xamarin.Core.Models
 {
-    public enum SearchType 
+    public enum SearchType : int
     {
-        CATEGORY, 
-        PLACE, 
-        TITLE
+        CATEGORY = 0, 
+        PLACE = 1, 
+        TITLE = 2
     }
 
     public interface ISearchGroup 

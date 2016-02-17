@@ -8,16 +8,13 @@ using System.Collections.Generic;
 using DroidKaigi2016Xamarin.Core.Models;
 using Android.Support.V7.Widget;
 using DroidKaigi2016Xamarin.Droid.Widgets;
+using System.Linq;
+using DroidKaigi2016Xamarin.Droid.Extensions;
 
 namespace io.github.droidkaigi.confsched.widget
 {
     public class SearchPlacesAndCategoriesView : FrameLayout 
     {
-//        public interface OnClickSearchGroup {
-//
-//            void onClickSearchGroup(SearchGroup searchGroup);
-//        }
-//
         private SearchPlacesAndCategoriesViewBinding binding;
 
         private SearchGroupsAdapter adapter;
@@ -41,13 +38,13 @@ namespace io.github.droidkaigi.confsched.widget
         public void AddPlaces(IList<Place> places) 
         {
             adapter.AddItem(new SearchTitle(Context.GetString(Resource.String.search_by_place)));
-            adapter.AddAll(new List<Place>(places));
+            adapter.AddAll(places.Select(x=>(ISearchGroup)x).ToList()); // sharow copy
         }
 
         public void AddCategories(IList<Category> categories) 
         {
             adapter.AddItem(new SearchTitle(Context.GetString(Resource.String.search_by_category)));
-            adapter.AddAll(new List<Category>(categories));
+            adapter.AddAll(categories.Select(x=>(ISearchGroup)x).ToList()); // sharow copy
         }
 
         private void InitRecyclerView() 
@@ -85,79 +82,51 @@ namespace io.github.droidkaigi.confsched.widget
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                switch (viewType) 
-                {
-                    case TYPE_CATEGORY:
-                        return new SearchGroupsViewBinder(Context, parent, Resource.Layout.item_search_category);
-                    case TYPE_PLACE:
-                        return new SearchGroupsViewBinder(Context, parent, Resource.Layout.item_search_place);
-                    case TYPE_TITLE:
-                        return new SearchGroupsViewBinder(Context, parent, Resource.Layout.item_search_title);
-                    default:
-                        throw new InvalidOperationException("ViewType is invalid: " + viewType);
-                }
+                return SearchGroupsViewBinder.NewInstance(Context, parent, viewType);
             }
 
-            public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+            public override void OnBindViewHolder(RecyclerView.ViewHolder h, int position)
             {
+                var holder = h as SearchGroupsViewBinder;
                 var searchGroup = GetItem(position);
                 switch (searchGroup.Type) 
                 {
                     case SearchType.CATEGORY:
                         var categoryBinding = holder.binding as SearchCategoryItemBinding;
-                        categoryBinding.setCategory(searchGroup as Category);
-                        categoryBinding.getRoot().setOnClickListener(v -> showSearchedSessions(searchGroup));
+                        categoryBinding.SetCategory(searchGroup as Category);
+                        categoryBinding.Root.SetOnClickAction(v => ShowSearchedSessions(searchGroup));
                         break;
                     case SearchType.PLACE:
                         var placeBinding = holder.binding as SearchPlaceItemBinding;
-                        placeBinding.setPlace(searchGroup as Place);
-                        placeBinding.getRoot().setOnClickListener(v -> showSearchedSessions(searchGroup));
+                        placeBinding.SetPlace(searchGroup as Place);
+                        placeBinding.Root.SetOnClickAction(v => ShowSearchedSessions(searchGroup));
                         break;
                     default:
                         var titleBinding = holder.binding as SearchTitleItemBinding;
-                        titleBinding.txtTitle.setText(searchGroup.Name);
+                        titleBinding.txtTitle.Text = searchGroup.Name;
                         break;
                 }            
             }
 
-            @Override
-            public void onBindViewHolder(BindingHolder<ViewDataBinding> holder, int position) {
-                SearchGroup searchGroup = getItem(position);
-                switch (searchGroup.getType()) {
-                    case CATEGORY:
-                        ItemSearchCategoryBinding categoryBinding = (ItemSearchCategoryBinding) holder.binding;
-                        categoryBinding.setCategory((Category) searchGroup);
-                        categoryBinding.getRoot().setOnClickListener(v -> showSearchedSessions(searchGroup));
-                        break;
-                    case PLACE:
-                        ItemSearchPlaceBinding placeBinding = (ItemSearchPlaceBinding) holder.binding;
-                        placeBinding.setPlace((Place) searchGroup);
-                        placeBinding.getRoot().setOnClickListener(v -> showSearchedSessions(searchGroup));
-                        break;
-                    default:
-                        ItemSearchTitleBinding titleBinding = (ItemSearchTitleBinding) holder.binding;
-                        titleBinding.txtTitle.setText(searchGroup.getName());
-                        break;
-                }
+            private void ShowSearchedSessions(ISearchGroup searchGroup) 
+            {
+                onClickSearchGroup(searchGroup);
             }
 
-            private void showSearchedSessions(SearchGroup searchGroup) {
-                onClickSearchGroup.onClickSearchGroup(searchGroup);
-            }
+            public override int GetItemViewType(int position)
+            {
+                var searchGroup = GetItem(position);
 
-            @Override
-            public int getItemViewType(int position) {
-                SearchGroup searchGroup = getItem(position);
-
-                switch (searchGroup.getType()) {
-                    case CATEGORY:
+                switch (searchGroup.Type) 
+                {
+                    case SearchType.CATEGORY:
                         return TYPE_CATEGORY;
-                    case PLACE:
+                    case SearchType.PLACE:
                         return TYPE_PLACE;
-                    case TITLE:
+                    case SearchType.TITLE:
                         return TYPE_TITLE;
                     default:
-                        throw new IllegalStateException("ViewType: " + searchGroup.getType() + " is invalid.");
+                        throw new InvalidOperationException("ViewType: " + searchGroup.Type.ToString() + " is invalid.");
                 }
             }
 

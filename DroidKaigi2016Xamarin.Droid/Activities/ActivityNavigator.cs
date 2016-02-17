@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content;
 using DroidKaigi2016Xamarin.Core.Models;
 using Stiletto;
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace DroidKaigi2016Xamarin.Droid.Activities
 {
@@ -24,9 +25,9 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 //            WebViewActivity.start(context, url, title);
         }
 
-        public void ShowSearch(Activity activity) 
+        public void ShowSearch(Fragment fragment, int requestCode)         
         {
-            SearchActivity.Start(activity);
+            SearchActivity.Start(fragment, requestCode);
         }
 
         public void ShowFeedback(Context context) 

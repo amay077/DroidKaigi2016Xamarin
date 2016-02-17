@@ -13,10 +13,37 @@ namespace io.github.droidkaigi.confsched.widget
 {
 	public class SearchGroupsViewBinder : RecyclerView.ViewHolder
 	{
-		public SearchGroupsViewBinder(Context context, ViewGroup parent, int layoutId)
+        public readonly object binding;
+
+        public static SearchGroupsViewBinder NewInstance(Context context, ViewGroup parent, int viewType)
 		{
-            var view = LayoutInflater.From(context).Inflate(layoutId, parent, false);
+            View view;
+            object binding;
+            switch (viewType) 
+            {
+                case (int)SearchType.CATEGORY:
+                    view = LayoutInflater.From(context).Inflate(Resource.Layout.item_search_category, parent, false);
+                    binding = new SearchCategoryItemBinding(view);
+                    break;
+                case (int)SearchType.PLACE:
+                    view = LayoutInflater.From(context).Inflate(Resource.Layout.item_search_place, parent, false);
+                    binding = new SearchPlaceItemBinding(view);
+                    break;
+                case (int)SearchType.TITLE:
+                    view = LayoutInflater.From(context).Inflate(Resource.Layout.item_search_title, parent, false);
+                    binding = new SearchTitleItemBinding(view);
+                    break;
+                default:
+                    throw new InvalidOperationException("ViewType is invalid: " + viewType.ToString());
+            }
+
+            return new SearchGroupsViewBinder(view, binding);
 		}
+
+        private SearchGroupsViewBinder(View view, object binding) : base(view)
+        {
+            this.binding = binding;
+        }
 	}
 
 }

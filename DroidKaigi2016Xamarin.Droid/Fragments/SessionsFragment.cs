@@ -23,6 +23,8 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
     public class SessionsFragment : Fragment
     {
         public static readonly string TAG = typeof(SessionsFragment).Name;
+        private static readonly string ARG_SHOULD_REFRESH = "should_refresh";
+        private static readonly int REQ_SEARCH = 2;
 
         [Inject]
         public DroidKaigiClient Client { get; set; }
@@ -166,7 +168,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
             switch (item.ItemId) 
             {
                 case Resource.Id.item_search:
-                    ActivityNavigator.ShowSearch(Activity);
+                    ActivityNavigator.ShowSearch(this, REQ_SEARCH);
                     break;
             }
 
