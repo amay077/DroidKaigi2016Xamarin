@@ -209,6 +209,13 @@
     <Compile Include="Widgets\SponsorImageViewBinding.cs" />
     <Compile Include="Fragments\AboutFragment.cs" />
     <Compile Include="Fragments\AboutFragmentBinding.cs" />
+    <Compile Include="Fragments\MapFragment.cs" />
+    <Compile Include="Fragments\MapFragmentBinding.cs" />
+    <Compile Include="Extensions\PlaceMapExtension.cs" />
+    <Compile Include="Widgets\MapSearchView.cs" />
+    <Compile Include="Widgets\MapSearchViewBinding.cs" />
+    <Compile Include="Widgets\MapSearchViewItem.cs" />
+    <Compile Include="Widgets\MapSearchViewItemBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

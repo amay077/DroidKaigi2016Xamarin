@@ -4,6 +4,9 @@ using DroidKaigi2016Xamarin.Droid.DIs;
 using Stiletto;
 using Android.Support.V7.App;
 using Android.Support.V4.App;
+using Android.App;
+
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace DroidKaigi2016Xamarin.Droid
 {
@@ -12,6 +15,10 @@ namespace DroidKaigi2016Xamarin.Droid
         Icon="@mipmap/ic_launcher",
         SupportsRtl=true,
         Theme="@style/AppTheme")]
+    [MetaData("com.google.android.gms.version",
+        Value = "@integer/google_play_services_version")]
+    [MetaData("com.google.android.maps.v2.API_KEY",
+        Value = "{your google maps api key}")]
     public class MainApplication : Android.App.Application
     {
         public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
