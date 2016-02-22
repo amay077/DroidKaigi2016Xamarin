@@ -80,7 +80,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
 
         private IDisposable FetchAndSave() 
         {
-            return Client.GetSessions().ToObservable()
+            return Client.GetSessions(AppUtil.GetCurrentLanguageId(Activity)).ToObservable()
                 .Do(sessions => Dao.UpdateAll(sessions).Subscribe()) // await しないのは、保存完了を待つ必要がないから
                 .SubscribeOn(Scheduler.Default)
                 .ObserveOn(SynchronizationContext.Current)
@@ -94,7 +94,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                     {
                         if (sessions.Count == 0) 
                         {
-                            return Client.GetSessions().ToObservable()
+                            return Client.GetSessions(AppUtil.GetCurrentLanguageId(Activity)).ToObservable()
                                 .Do(x => Dao.UpdateAll(x).Subscribe()); // await しないのは、保存完了を待つ必要がないから
                         } else {
                             return Observable.Return(sessions);
