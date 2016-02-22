@@ -33,7 +33,6 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         private static readonly string TAG = typeof(MainActivity).Name;
-        private static readonly int BACK_BUTTON_PRESSED_INTERVAL = 3000;
 
         [Inject]
         public AnalyticsTracker AnalyticsTracker { get; set; }
@@ -46,7 +45,6 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         private MainActivityBinding binding;
         private Android.Support.V4.App.Fragment currentFragment;
-        private bool isPressedBackOnce = false;
 
         public static void Start(Activity activity) 
         {
@@ -106,16 +104,10 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
             if (binding.drawer.IsDrawerOpen(GravityCompat.Start)) 
             {
                 binding.drawer.CloseDrawer(GravityCompat.Start);
-            } 
-            else if (isPressedBackOnce) 
-            {
-                base.OnBackPressed();
                 return;
             }
 
-            isPressedBackOnce = true;
-            ShowSnackBar(GetString(Resource.String.app_close_confirm));
-            new Handler().PostDelayed(() => isPressedBackOnce = false, BACK_BUTTON_PRESSED_INTERVAL);
+            base.OnBackPressed();
         }
 
         private void ShowSnackBar(string text) 
