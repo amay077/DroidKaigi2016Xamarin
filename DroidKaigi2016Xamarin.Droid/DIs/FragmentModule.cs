@@ -9,6 +9,7 @@ namespace DroidKaigi2016Xamarin.Droid.DIs
         typeof(SessionsFragment),
         typeof(SessionsTabFragment),
         typeof(SessionDetailFragment),
+        typeof(SettingsFragment),
     })]
     public class FragmentModule
     {

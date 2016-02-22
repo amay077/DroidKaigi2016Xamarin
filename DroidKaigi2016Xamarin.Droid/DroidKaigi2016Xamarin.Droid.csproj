@@ -195,6 +195,11 @@
     <Compile Include="Activities\SearchedSessionsActivity.cs" />
     <Compile Include="Activities\SearchedSessionsActivityBinding.cs" />
     <Compile Include="Fragments\SearchedSessionsFragment.cs" />
+    <Compile Include="Fragments\MyScheduleFragment.cs" />
+    <Compile Include="Fragments\SettingsFragment.cs" />
+    <Compile Include="Fragments\SettingsFragmentBinding.cs" />
+    <Compile Include="Utils\PrefUtil.cs" />
+    <Compile Include="Utils\IntentUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

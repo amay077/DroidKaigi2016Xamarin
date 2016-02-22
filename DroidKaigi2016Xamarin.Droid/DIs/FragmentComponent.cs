@@ -31,6 +31,12 @@ namespace DroidKaigi2016Xamarin.Droid.DIs
             var container = Container.Create(modules);
             container.Inject(fragment);
         }
+
+        public void Inject(SettingsFragment fragment)
+        {
+            var container = Container.Create(modules);
+            container.Inject(fragment);
+        }
     }
 }
 
