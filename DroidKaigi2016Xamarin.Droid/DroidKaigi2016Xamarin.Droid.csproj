@@ -216,6 +216,8 @@
     <Compile Include="Widgets\MapSearchViewBinding.cs" />
     <Compile Include="Widgets\MapSearchViewItem.cs" />
     <Compile Include="Widgets\MapSearchViewItemBinding.cs" />
+    <Compile Include="Activities\WebViewActivity.cs" />
+    <Compile Include="Activities\WebViewActivityBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

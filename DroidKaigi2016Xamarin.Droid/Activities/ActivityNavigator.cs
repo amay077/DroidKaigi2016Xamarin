@@ -17,12 +17,12 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         public void ShowMain(Activity activity) 
         {
-//            MainActivity.Start(activity);
+            MainActivity.Start(activity);
         }
 
         public void ShowWebView(Context context, string url, string title) 
         {
-//            WebViewActivity.start(context, url, title);
+            WebViewActivity.Start(context, url, title);
         }
 
         public void ShowSearch(Fragment fragment, int requestCode)         

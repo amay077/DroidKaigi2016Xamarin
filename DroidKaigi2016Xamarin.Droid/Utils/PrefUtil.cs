@@ -6,7 +6,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
 {
     public static class PrefUtil
     {
-        private static readonly string KEY_CURRENT_LANGUAGE_ID = "current_language_id";
+        public static readonly string KEY_CURRENT_LANGUAGE_ID = "current_language_id";
 
         private static ISharedPreferences pref;
 

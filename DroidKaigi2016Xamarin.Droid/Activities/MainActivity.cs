@@ -48,7 +48,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         private Android.Support.V4.App.Fragment currentFragment;
         private bool isPressedBackOnce = false;
 
-        static void Start(Activity activity) 
+        public static void Start(Activity activity) 
         {
             Intent intent = new Intent(activity, typeof(MainActivity));
             activity.StartActivity(intent);

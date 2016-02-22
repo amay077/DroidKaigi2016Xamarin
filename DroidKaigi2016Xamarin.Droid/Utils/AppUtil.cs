@@ -9,6 +9,9 @@ using Android.Util;
 using Java.Util;
 using Android.Support.CustomTabs;
 using Android.Support.V4.Content;
+using Android.Text.Style;
+using Android.Views;
+using System.Linq;
 
 namespace DroidKaigi2016Xamarin.Droid.Utils
 {
@@ -49,7 +52,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
         public static void SetLocale(Context context, string languageId) 
         {
             var config = new Configuration();
-//            PrefUtil.put(context, PrefUtil.KEY_CURRENT_LANGUAGE_ID, languageId);
+            PrefUtil.Put(context, PrefUtil.KEY_CURRENT_LANGUAGE_ID, languageId);
             config.Locale = new Locale(languageId);
             context.Resources.UpdateConfiguration(config, context.Resources.DisplayMetrics);
         }
@@ -64,13 +67,13 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             string languageId = null;
             try 
             {
-//                languageId = PrefUtil.get(context, PrefUtil.KEY_CURRENT_LANGUAGE_ID, null);
+                languageId = PrefUtil.Get(context, PrefUtil.KEY_CURRENT_LANGUAGE_ID, null);
                 languageId = null;
                 if (languageId == null) 
                 {
                     languageId = Java.Util.Locale.Default.Language.ToLower();
                 }
-                if (!Arrays.AsList(SUPPORT_LANG).Contains(languageId)) 
+                if (!SUPPORT_LANG.Contains(languageId)) 
                 {
                     languageId = LANG_EN_ID;
                 }
@@ -142,19 +145,13 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
 
             var builder = new SpannableStringBuilder();
             builder.Append(text);
-//            builder.setSpan(
-//                new ClickableSpan() {
-//                @Override
-//                public void onClick(View view) {
-//                    showWebPage(activity, url);
-//                }
-//            },
-//                text.indexOf(linkText),
-//                text.indexOf(linkText) + linkText.length(),
-//                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-//            );
-//
-//            textView.setText(builder);
+
+            builder.SetSpan(new MyClickableSpan(v =>
+                ShowWebPage(activity, url)), 
+                text.IndexOf(linkText),
+                text.IndexOf(linkText) + linkText.Length,
+                SpanTypes.ExclusiveExclusive
+            );
             textView.MovementMethod = LinkMovementMethod.Instance;
         }
 
@@ -166,6 +163,23 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
                 .Build();
 
             intent.LaunchUrl(activity, Android.Net.Uri.Parse(url));
+        }
+
+        class MyClickableSpan :ClickableSpan
+        {
+            private readonly Action<View> onClickHandler;
+
+            public MyClickableSpan(Action<View> onClickHandler)
+            {
+                this.onClickHandler = onClickHandler;
+            }
+
+            #region implemented abstract members of ClickableSpan
+            public override void OnClick(View widget)
+            {
+                onClickHandler(widget);
+            }
+            #endregion
         }
 
     }
