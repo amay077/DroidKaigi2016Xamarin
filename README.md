@@ -1,3 +1,7 @@
+# Screens
+
+![](capture.gif)
+
 # Libraries
 
 * Dagger2 -> [Stiletto](http://stiletto.bendb.com/) - Benjamin Bader
@@ -11,5 +15,5 @@
 * [Json.NET](http://www.newtonsoft.com/json) - Newtonsoft
 * [AndroidFlowLayout](https://www.nuget.org/packages/AndroidFlowLayout/) - flagbug
 * [LikeButton](https://github.com/jd-alexander/LikeButton) - jd-alexander
-* 
-*
+
+see more detail info - http://qiita.com/amay077/items/09b442da6ac22269e8e0
