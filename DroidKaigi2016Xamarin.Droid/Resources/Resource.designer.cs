@@ -3452,8 +3452,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f08006a
 			public const int about_conference_descriptions = 2131230826;
 			
-			// aapt resource value: 0x7f080076
-			public const int about_inquiry_url = 2131230838;
+			// aapt resource value: 0x7f080075
+			public const int about_inquiry_url = 2131230837;
 			
 			// aapt resource value: 0x7f08006e
 			public const int about_license = 2131230830;
@@ -3480,10 +3480,7 @@ namespace DroidKaigi2016Xamarin.Droid
 			public const int all_sessions = 2131230799;
 			
 			// aapt resource value: 0x7f080072
-			public const int app_close_confirm = 2131230834;
-			
-			// aapt resource value: 0x7f080073
-			public const int app_close_now = 2131230835;
+			public const int app_close_now = 2131230834;
 			
 			// aapt resource value: 0x7f08003e
 			public const int app_name = 2131230782;
@@ -3497,8 +3494,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f080008
 			public const int auth_google_play_services_client_google_display_name = 2131230728;
 			
-			// aapt resource value: 0x7f080077
-			public const int bug_report_url = 2131230839;
+			// aapt resource value: 0x7f080076
+			public const int bug_report_url = 2131230838;
 			
 			// aapt resource value: 0x7f080045
 			public const int cancel = 2131230789;
@@ -3665,11 +3662,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f080050
 			public const int my_schedule = 2131230800;
 			
-			// aapt resource value: 0x7f080074
-			public const int my_schedule_empty = 2131230836;
+			// aapt resource value: 0x7f080073
+			public const int my_schedule_empty = 2131230835;
 			
-			// aapt resource value: 0x7f080075
-			public const int my_schedule_go_to_session_list = 2131230837;
+			// aapt resource value: 0x7f080074
+			public const int my_schedule_go_to_session_list = 2131230836;
 			
 			// aapt resource value: 0x7f080044
 			public const int ok = 2131230788;
