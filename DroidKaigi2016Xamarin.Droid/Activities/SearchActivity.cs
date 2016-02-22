@@ -33,7 +33,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         | ConfigChanges.ScreenSize
         | ConfigChanges.Orientation,
         Label = "@string/app_name", 
-        Theme = "@style/AppTheme.ColoredStatusBar")]
+        Theme = "@style/AppTheme.ColoredStatusBar",
+        Exported = false)]
     public class SearchActivity : AppCompatActivity, ITextWatcher 
     {
         private static readonly string TAG = typeof(SearchActivity).Name;

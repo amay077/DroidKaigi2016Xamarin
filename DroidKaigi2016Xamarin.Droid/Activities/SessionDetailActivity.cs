@@ -21,7 +21,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         | ConfigChanges.ScreenSize
         | ConfigChanges.Orientation,
         Label = "@string/session_detail", 
-        Theme = "@style/AppTheme.NoActionBar")]
+        Theme = "@style/AppTheme.NoActionBar",
+        Exported = false)]
     public class SessionDetailActivity : AppCompatActivity 
     {
         private static readonly string TAG =  typeof(SessionDetailActivity).Name;

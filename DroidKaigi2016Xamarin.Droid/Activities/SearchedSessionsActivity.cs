@@ -22,7 +22,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         | ConfigChanges.ScreenSize
         | ConfigChanges.Orientation,
         Label = "@string/app_name", 
-        Theme = "@style/AppTheme.ColoredStatusBar")]
+        Theme = "@style/AppTheme.ColoredStatusBar",
+        Exported = false)]
     public class SearchedSessionsActivity : AppCompatActivity 
     {
         [Inject]
