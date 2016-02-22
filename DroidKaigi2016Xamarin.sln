@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidKaigi2016Xamarin.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LikeButton", "LikeButton\LikeButton.csproj", "{6248D6DD-76F1-4A30-959C-49D380C0F07C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stiletto.Android", "..\stiletto\Stiletto.Android\Stiletto.Android.csproj", "{469A3FD7-78E9-4E31-B801-05B8861FD17E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,12 +14,6 @@ Global
 		CodegenDebug|Any CPU = CodegenDebug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.CodegenDebug|Any CPU.ActiveCfg = CodegenDebug|Any CPU
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.CodegenDebug|Any CPU.Build.0 = CodegenDebug|Any CPU
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{469A3FD7-78E9-4E31-B801-05B8861FD17E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6248D6DD-76F1-4A30-959C-49D380C0F07C}.CodegenDebug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6248D6DD-76F1-4A30-959C-49D380C0F07C}.CodegenDebug|Any CPU.Build.0 = Debug|Any CPU
 		{6248D6DD-76F1-4A30-959C-49D380C0F07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
