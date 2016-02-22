@@ -7,6 +7,8 @@ using Android.Text.Method;
 using Android.Text;
 using Android.Util;
 using Java.Util;
+using Android.Support.CustomTabs;
+using Android.Support.V4.Content;
 
 namespace DroidKaigi2016Xamarin.Droid.Utils
 {
@@ -134,7 +136,7 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
             }
         }
 
-        public static void linkify(Activity activity, TextView textView, string linkText, string url) 
+        public static void Linkify(Activity activity, TextView textView, string linkText, string url) 
         {
             var text = textView.Text;
 
@@ -158,12 +160,12 @@ namespace DroidKaigi2016Xamarin.Droid.Utils
 
         public static void ShowWebPage(Activity activity, string url) 
         {
-//            CustomTabsIntent intent = new CustomTabsIntent.Builder()
-//                .setShowTitle(true)
-//                .setToolbarColor(ContextCompat.getColor(activity, R.color.theme500))
-//                .build();
-//
-//            intent.launchUrl(activity, Uri.parse(url));
+            var intent = new CustomTabsIntent.Builder()
+                .SetShowTitle(true)
+                .SetToolbarColor(ContextCompat.GetColor(activity, Resource.Color.theme500))
+                .Build();
+
+            intent.LaunchUrl(activity, Android.Net.Uri.Parse(url));
         }
 
     }

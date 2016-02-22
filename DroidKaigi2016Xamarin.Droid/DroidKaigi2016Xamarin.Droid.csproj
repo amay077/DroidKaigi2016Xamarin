@@ -128,6 +128,9 @@
     <Reference Include="Stiletto">
       <HintPath>..\packages\Stiletto.0.3.1.0\Lib\MonoAndroid\Stiletto.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.CustomTabs">
+      <HintPath>..\packages\Xamarin.Android.Support.CustomTabs.23.1.1.0\lib\MonoAndroid403\Xamarin.Android.Support.CustomTabs.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -200,6 +203,10 @@
     <Compile Include="Fragments\SettingsFragmentBinding.cs" />
     <Compile Include="Utils\PrefUtil.cs" />
     <Compile Include="Utils\IntentUtil.cs" />
+    <Compile Include="Fragments\SponsorsFragment.cs" />
+    <Compile Include="Fragments\SponsorsFragmentBinding.cs" />
+    <Compile Include="Widgets\SponsorImageView.cs" />
+    <Compile Include="Widgets\SponsorImageViewBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
