@@ -17,7 +17,7 @@ namespace DroidKaigi2016Xamarin.Droid.Extensions
 //            { Page.MAP,          new PageConfig(Resource.Id.nav_map,          Resource.String.map,          true,  ()=>MapFragment.NewInstance() ) },
             { Page.SETTINGS,     new PageConfig(Resource.Id.nav_settings,     Resource.String.settings,     true, ()=>SettingsFragment.NewInstance() ) },
             { Page.SPONSORS,     new PageConfig(Resource.Id.nav_sponsors,     Resource.String.sponsors,     true,  ()=>SponsorsFragment.NewInstance() ) },
-//            { Page.ABOUT,        new PageConfig(Resource.Id.nav_about,        Resource.String.about,        true,  ()=>AboutFragment.NewInstance() ) },
+            { Page.ABOUT,        new PageConfig(Resource.Id.nav_about,        Resource.String.about,        true,  ()=>AboutFragment.NewInstance() ) },
         };
 
         public static int GetMenuId(this Page self) 

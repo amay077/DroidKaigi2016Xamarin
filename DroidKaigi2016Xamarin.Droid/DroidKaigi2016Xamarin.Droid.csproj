@@ -207,6 +207,8 @@
     <Compile Include="Fragments\SponsorsFragmentBinding.cs" />
     <Compile Include="Widgets\SponsorImageView.cs" />
     <Compile Include="Widgets\SponsorImageViewBinding.cs" />
+    <Compile Include="Fragments\AboutFragment.cs" />
+    <Compile Include="Fragments\AboutFragmentBinding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
