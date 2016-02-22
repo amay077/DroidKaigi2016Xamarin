@@ -34,7 +34,14 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
             return blob.GetOrCreateObject<IList<Session>>(KEY_SESSIONS, () => new List<Session>())
                 .Select(source => 
                     {
-                        return sessions.Union(source);
+                        var checkedSessions = sessions.Where(session => session.IsChecked).ToDictionary(session => session.id);
+                        var merged = sessions.Union(source);
+
+                        return merged.Select(session => 
+                            {
+                                session.IsChecked = checkedSessions.ContainsKey(session.id);
+                                return session;
+                            });
                     })
                 .SelectMany(merged => 
                     { 
@@ -52,41 +59,6 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
                     });
         }
 
-
-//        public void insertAll(@NonNull List<Session> sessions) {
-//            orma.transactionAsync(new TransactionTask() {
-//                @Override
-//                public void execute() throws Exception {
-//                    for (Session session : sessions) {
-//                        session.prepareSave();
-//                        insertSpeaker(session.speaker);
-//                        insertCategory(session.category);
-//                        insertPlace(session.place);
-//                    }
-//
-//                    sessionRelation().inserter().executeAll(sessions);
-//                }
-//            });
-//        }
-//
-//        private void insertSpeaker(Speaker speaker) {
-//            if (speaker != null && speakerRelation().selector().idEq(speaker.id).count() == 0) {
-//                speakerRelation().inserter().execute(speaker);
-//            }
-//        }
-//
-//        private void insertPlace(Place place) {
-//            if (place != null && placeRelation().selector().idEq(place.id).count() == 0) {
-//                placeRelation().inserter().execute(place);
-//            }
-//        }
-//
-//        private void insertCategory(Category category) {
-//            if (category != null && categoryRelation().selector().idEq(category.id).count() == 0) {
-//                categoryRelation().inserter().execute(category);
-//            }
-//        }
-//
         public IObservable<IList<Session>> FindAll() 
         {
             return blob.GetOrCreateObject<IList<Session>>(KEY_SESSIONS, () => new List<Session>());
@@ -120,7 +92,14 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
             return blob.GetOrCreateObject<IList<Session>>(KEY_SESSIONS, () => new List<Session>())
                 .Select(source => 
                     {
-                        return sessions.Union(source);
+                        var checkedSessions = sessions.Where(session => session.IsChecked).ToDictionary(session => session.id);
+                        var merged = sessions.Union(source);
+
+                        return merged.Select(session => 
+                            {
+                                session.IsChecked = checkedSessions.ContainsKey(session.id);
+                                return session;
+                            });
                     })
                 .SelectMany(merged => 
                     { 
