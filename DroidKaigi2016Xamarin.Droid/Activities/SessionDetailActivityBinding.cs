@@ -16,9 +16,6 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         private SessionDetailActivityBinding(Activity activity, int layoutId)
         {
             activity.SetContentView(layoutId);
-//            toolbar = activity.FindViewById<Toolbar>(Resource.Id.toolbar);
-//            drawer  = activity.FindViewById<DrawerLayout>(Resource.Id.drawer);
-//            navView = activity.FindViewById<NavigationView>(Resource.Id.nav_view);
 
             var decorView = activity.Window.DecorView;
             Root = (ViewGroup) decorView.FindViewById(global::Android.Resource.Id.Content);

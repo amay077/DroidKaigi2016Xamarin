@@ -108,10 +108,10 @@ namespace io.github.droidkaigi.confsched.widget
                         if (shouldClear) 
                         {
                             ClearText();
-//                            return true;
+                            e.Handled = true;
                         }
                     }
-
+                    e.Handled = false;
                 };
         }
 

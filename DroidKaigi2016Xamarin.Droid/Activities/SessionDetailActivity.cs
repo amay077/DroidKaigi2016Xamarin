@@ -7,9 +7,10 @@ using Stiletto;
 using Android.App;
 using Android.OS;
 using DroidKaigi2016Xamarin.Droid.Fragments;
-using Fragment = Android.Support.V4.App.Fragment;
 using Android.Views;
 using Android.Content.PM;
+
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace DroidKaigi2016Xamarin.Droid.Activities
 {

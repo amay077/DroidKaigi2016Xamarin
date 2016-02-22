@@ -192,6 +192,9 @@
     <Compile Include="Extensions\IListExtension.cs" />
     <Compile Include="Utils\DelegateFilter.cs" />
     <Compile Include="Models\SearchResult.cs" />
+    <Compile Include="Activities\SearchedSessionsActivity.cs" />
+    <Compile Include="Activities\SearchedSessionsActivityBinding.cs" />
+    <Compile Include="Fragments\SearchedSessionsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

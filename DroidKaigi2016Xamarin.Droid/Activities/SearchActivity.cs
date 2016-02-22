@@ -32,8 +32,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
         | ConfigChanges.ScreenLayout
         | ConfigChanges.ScreenSize
         | ConfigChanges.Orientation,
-        Label = "@string/search", 
-        Theme = "@style/AppTheme.NoActionBar")]
+        Label = "@string/app_name", 
+        Theme = "@style/AppTheme.ColoredStatusBar")]
     public class SearchActivity : AppCompatActivity, ITextWatcher 
     {
         private static readonly string TAG = typeof(SearchActivity).Name;
@@ -92,8 +92,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
             binding.searchPlacesAndCategoriesView.AddCategories(CategoryDao.FindAll().Wait());
             binding.searchPlacesAndCategoriesView.SetOnClickSearchGroup(searchGroup => 
                 {
-//                    StartActivityForResult(SearchedSessionsActivity.CreateIntent(this, searchGroup),
-//                        REQ_SEARCH_PLACES_AND_CATEGORIES_VIEW);
+                    StartActivityForResult(SearchedSessionsActivity.CreateIntent(this, searchGroup),
+                        REQ_SEARCH_PLACES_AND_CATEGORIES_VIEW);
                 });
         }
 

@@ -160,7 +160,7 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
             base.OnActivityResult(requestCode, resultCode, data);
             if (currentFragment != null) 
             {
-                currentFragment.OnActivityResult(requestCode, resultCode == Result.Ok ? -1 : 0, data);
+                currentFragment.OnActivityResult(requestCode, (int)resultCode, data);
             }
         }
 

@@ -87,7 +87,7 @@ namespace DroidKaigi2016Xamarin.Droid.Fragments
                 .Subscribe();
         }
 
-        protected IDisposable LoadData() 
+        protected virtual IDisposable LoadData() 
         {
             return Dao.FindAll()
                 .SelectMany(sessions => 

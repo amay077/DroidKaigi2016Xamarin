@@ -34,8 +34,11 @@ namespace DroidKaigi2016Xamarin.Droid.DIs
             container.Inject(activity);
         }
 
-//
-//        void inject(SearchedSessionsActivity activity);
+        public void Inject(SearchedSessionsActivity activity) 
+        {
+            var container = Container.Create(modules);
+            container.Inject(activity);
+        }
 
         public FragmentComponent Plus(FragmentModule fragmentModule)
         {
