@@ -56,16 +56,6 @@ namespace DroidKaigi2016Xamarin.Droid
             base.OnCreate();
 
             appComponent = new AppComponent(this);
-
-//            appComponent = DaggerAppComponent.builder()
-//                .appModule(new AppModule(this))
-//                .build();
-
-//            Fabric.with(this, new Crashlytics());
-//
-//            new StethoWrapper(this).setup();
-//
-//            AndroidThreeTen.init(this);
         }
     }
 }
