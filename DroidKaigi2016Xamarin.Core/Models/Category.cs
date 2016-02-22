@@ -20,6 +20,16 @@ namespace DroidKaigi2016Xamarin.Core.Models
         public SearchType Type { get { return SearchType.CATEGORY; } }
 
         #endregion
+
+        public override bool Equals(object obj)
+        {
+            return obj is Category &&  (obj as Category).id == id || base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return id;
+        }
     }
 }
 

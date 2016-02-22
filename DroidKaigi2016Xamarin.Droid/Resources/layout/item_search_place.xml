@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable
-            name="place"
-            type="io.github.droidkaigi.confsched.model.Place" />
-    </data>
-    <TextView
-        android:id="@+id/txt_place"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/clickable_white"
-        android:clickable="true"
-        android:padding="@dimen/spacing"
-        android:textColor="@color/grey600"
-        android:textSize="@dimen/text" />
-<!--        android:text="@{place.name}"-->
-</layout>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/txt_place"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/clickable_white"
+    android:clickable="true"
+    android:padding="@dimen/spacing"
+    android:textColor="@color/grey600"
+    android:textSize="@dimen/text" />

@@ -21,6 +21,9 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
 
         private readonly IBlobCache blob = BlobCache.LocalMachine;
 
+        private readonly CategoryDao categoryDao = new CategoryDao();
+        private readonly PlaceDao placeDao = new PlaceDao();
+
         [Inject]
         public SessionDao()
         {
@@ -33,7 +36,20 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
                     {
                         return sessions.Union(source);
                     })
-                .SelectMany(merged => blob.InsertObject(KEY_SESSIONS, merged));
+                .SelectMany(merged => 
+                    { 
+                        return Observable.Merge(
+                            merged.ToObservable()
+                                .Select(session => session.category)
+                                .ToList().Distinct()
+                                .SelectMany(categoryDao.InsertAll),
+                            merged.ToObservable()
+                                .Select(session => session.place)
+                                .ToList().Distinct()
+                                .SelectMany(placeDao.InsertAll),
+                            blob.InsertObject(KEY_SESSIONS, merged)
+                        );
+                    });
         }
 
 
@@ -106,7 +122,22 @@ namespace DroidKaigi2016Xamarin.Droid.Daos
                     {
                         return sessions.Union(source);
                     })
-                .SelectMany(merged => blob.InsertObject(KEY_SESSIONS, merged));
+                .SelectMany(merged => 
+                    { 
+                        return Observable.Merge(
+                            merged.ToObservable()
+                            .Select(session => session.category)
+                            .GroupBy(x => x.Id).SelectMany(x => x.Take(1))
+                            .ToList()
+                            .SelectMany(categoryDao.InsertAll),
+                            merged.ToObservable()
+                            .Select(session => session.place)
+                            .GroupBy(x => x.Id).SelectMany(x => x.Take(1))
+                            .ToList()
+                            .SelectMany(placeDao.InsertAll),
+                            blob.InsertObject(KEY_SESSIONS, merged)
+                        );
+                    });
         }
 //
 //        private void update(Session session) {

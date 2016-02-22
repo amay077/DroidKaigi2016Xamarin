@@ -2456,8 +2456,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0090
 			public const int app_bar = 2131493008;
 			
-			// aapt resource value: 0x7f0c0080
-			public const int app_info = 2131492992;
+			// aapt resource value: 0x7f0c007f
+			public const int app_info = 2131492991;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int beginning = 2131492919;
@@ -2537,17 +2537,17 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0047
 			public const int default_activity_button = 2131492935;
 			
-			// aapt resource value: 0x7f0c007f
-			public const int design_menu_item_action_area = 2131492991;
-			
 			// aapt resource value: 0x7f0c007e
-			public const int design_menu_item_action_area_stub = 2131492990;
+			public const int design_menu_item_action_area = 2131492990;
 			
 			// aapt resource value: 0x7f0c007d
-			public const int design_menu_item_text = 2131492989;
+			public const int design_menu_item_action_area_stub = 2131492989;
 			
 			// aapt resource value: 0x7f0c007c
-			public const int design_navigation_view = 2131492988;
+			public const int design_menu_item_text = 2131492988;
+			
+			// aapt resource value: 0x7f0c007b
+			public const int design_navigation_view = 2131492987;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int disableHome = 2131492908;
@@ -2741,8 +2741,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0073
 			public const int nav_view = 2131492979;
 			
-			// aapt resource value: 0x7f0c007b
-			public const int navigation_header_container = 2131492987;
+			// aapt resource value: 0x7f0c007a
+			public const int navigation_header_container = 2131492986;
 			
 			// aapt resource value: 0x7f0c0094
 			public const int nested_scroll = 2131493012;
@@ -2780,8 +2780,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c005b
 			public const int radio = 2131492955;
 			
-			// aapt resource value: 0x7f0c0076
-			public const int recycler_view = 2131492982;
+			// aapt resource value: 0x7f0c0075
+			public const int recycler_view = 2131492981;
 			
 			// aapt resource value: 0x7f0c00c7
 			public const int reveal_view = 2131493063;
@@ -2789,8 +2789,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0020
 			public const int right = 2131492896;
 			
-			// aapt resource value: 0x7f0c0074
-			public const int root_view = 2131492980;
+			// aapt resource value: 0x7f0c0080
+			public const int root_view = 2131492992;
 			
 			// aapt resource value: 0x7f0c0040
 			public const int rtl = 2131492928;
@@ -2837,8 +2837,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0068
 			public const int search_mag_icon = 2131492968;
 			
-			// aapt resource value: 0x7f0c0077
-			public const int search_places_and_categories_view = 2131492983;
+			// aapt resource value: 0x7f0c0076
+			public const int search_places_and_categories_view = 2131492982;
 			
 			// aapt resource value: 0x7f0c0069
 			public const int search_plate = 2131492969;
@@ -2846,8 +2846,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c006a
 			public const int search_src_text = 2131492970;
 			
-			// aapt resource value: 0x7f0c0075
-			public const int search_toolbar = 2131492981;
+			// aapt resource value: 0x7f0c0074
+			public const int search_toolbar = 2131492980;
 			
 			// aapt resource value: 0x7f0c006e
 			public const int search_voice_btn = 2131492974;
@@ -2867,11 +2867,11 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c0030
 			public const int showTitle = 2131492912;
 			
-			// aapt resource value: 0x7f0c007a
-			public const int snackbar_action = 2131492986;
-			
 			// aapt resource value: 0x7f0c0079
-			public const int snackbar_text = 2131492985;
+			public const int snackbar_action = 2131492985;
+			
+			// aapt resource value: 0x7f0c0078
+			public const int snackbar_text = 2131492984;
 			
 			// aapt resource value: 0x7f0c0016
 			public const int snap = 2131492886;
@@ -3029,8 +3029,8 @@ namespace DroidKaigi2016Xamarin.Droid
 			// aapt resource value: 0x7f0c00a4
 			public const int view_pager = 2131493028;
 			
-			// aapt resource value: 0x7f0c0078
-			public const int webview = 2131492984;
+			// aapt resource value: 0x7f0c0077
+			public const int webview = 2131492983;
 			
 			// aapt resource value: 0x7f0c003d
 			public const int withText = 2131492925;

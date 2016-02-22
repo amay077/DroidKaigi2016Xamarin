@@ -22,9 +22,18 @@ using Fragment = Android.Support.V4.App.Fragment;
 using Java.Lang;
 using System.Linq;
 using Java.Util;
+using Android.Content.PM;
 
 namespace DroidKaigi2016Xamarin.Droid.Activities
 {
+    [Activity(
+        ConfigurationChanges = ConfigChanges.Keyboard
+        | ConfigChanges.KeyboardHidden
+        | ConfigChanges.ScreenLayout
+        | ConfigChanges.ScreenSize
+        | ConfigChanges.Orientation,
+        Label = "@string/search", 
+        Theme = "@style/AppTheme.NoActionBar")]
     public class SearchActivity : AppCompatActivity, ITextWatcher 
     {
         private static readonly string TAG = typeof(SearchActivity).Name;
@@ -79,8 +88,8 @@ namespace DroidKaigi2016Xamarin.Droid.Activities
 
         private void InitPlacesAndCategoriesView() 
         {
-            binding.searchPlacesAndCategoriesView.AddPlaces(PlaceDao.FindAll().ToList().Wait());
-            binding.searchPlacesAndCategoriesView.AddCategories(CategoryDao.FindAll().ToList().Wait());
+            binding.searchPlacesAndCategoriesView.AddPlaces(PlaceDao.FindAll().Wait());
+            binding.searchPlacesAndCategoriesView.AddCategories(CategoryDao.FindAll().Wait());
             binding.searchPlacesAndCategoriesView.SetOnClickSearchGroup(searchGroup => 
                 {
 //                    StartActivityForResult(SearchedSessionsActivity.CreateIntent(this, searchGroup),

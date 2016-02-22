@@ -12,6 +12,7 @@ namespace DroidKaigi2016Xamarin.Droid.DIs
     [Module(Injects = new [] {
         typeof(MainActivity),
         typeof(SessionDetailActivity),
+        typeof(SearchActivity),
     })]
     public class ActivityModule 
     {

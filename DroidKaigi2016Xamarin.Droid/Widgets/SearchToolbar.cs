@@ -59,14 +59,19 @@ namespace io.github.droidkaigi.confsched.widget
 
         private Drawable GetCloseDrawable() 
         {
+            Drawable closeDrawable = null;
             if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr1) 
             {
-                return binding.editSearch.GetCompoundDrawablesRelative()[DRAWABLE_RIGHT];
+                closeDrawable = binding.editSearch.GetCompoundDrawablesRelative()[DRAWABLE_RIGHT];
             } 
-            else 
+
+
+            if (closeDrawable == null)
             {
-                return binding.editSearch.GetCompoundDrawables()[DRAWABLE_RIGHT];
+                closeDrawable = binding.editSearch.GetCompoundDrawables()[DRAWABLE_RIGHT];
             }
+
+            return closeDrawable;
         }
 
         private void ToggleCloseButtonVisible(bool visible) 
